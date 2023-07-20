@@ -2,26 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.btn {
+  @apply px-2 py-3  text-sm lg:text-base rounded-lg transition-all duration-200;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.btn--out-light {
+  @apply border-[1px] border-neutral-100 text-neutral-100 hover:bg-white hover:text-neutral-950;
+}
+.btn--out-black {
+  @apply border-[1px] border-neutral-950 text-neutral-950 hover:bg-black hover:text-neutral-100;
+}
+.btn--fill-black {
+  @apply bg-black text-white  hover:bg-white hover:text-neutral-950 border-[1px] hover:border-neutral-950;
+}
+.btn--fill-white {
+  @apply hover:bg-black hover:text-neutral-100 bg-black text-white;
+}
+.btn--lx {
+  @apply px-5;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  @apply after:!text-[20px] after:text-white after:font-semibold after:content-none rounded-full bg-black  !h-[40px];
+}
+.swiper-scrollbar {
+  @apply !static mt-8;
+}
+@layer {
+  .con {
+    @apply container mx-auto w-[100%] h-[100%];
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  .home-catalog {
+    @apply flex flex-col;
+  }
 }
