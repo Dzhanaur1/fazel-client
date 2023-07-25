@@ -3,7 +3,7 @@ import { BsTrash, BsTrash2Fill } from "react-icons/bs";
 
 const ProductItem = () => {
   return (
-    <div className="flex items-center justify-between mb-6">
+    <div className="flex items-center  justify-between mb-6">
       <div className="flex-2">
         <img
           src="slider/alpha.png"
@@ -30,8 +30,8 @@ const ProductItem = () => {
 
 const ShoppingCart = () => {
   return (
-    <div className="con max-w-[980px] pt-10 flex">
-      <div className="flex flex-col flex-[3] gap-2 lg:gap-5 mr-10">
+    <div className="con max-w-[980px] flex-col lg:flex-row pt-4 lg:pt-10 flex">
+      <div className="flex flex-col flex-[3] gap-2 lg:gap-5 lg:mr-10">
         <h3 className="text-lg font-bold mb-2">Корзина </h3>
         <ProductItem />
         <ProductItem />
