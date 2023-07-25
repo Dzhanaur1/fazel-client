@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import "./globals.css";
 import { Noto_Sans } from "next/font/google";
@@ -11,11 +12,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} flex flex-col min-h-[100%]`}>
-        <Header />
-        <main className=" pt-[56px] flex-1">{children}</main>
-        <footer></footer>
+    <html lang="en" className=" h-full">
+      <body className={`${inter.className}  h-full`}>
+        <div className="flex flex-col h-full">
+          <Header />
+          <main className="pt-[48px] lg:pt-[56px] flex-[1_0_auto]">
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

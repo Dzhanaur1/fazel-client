@@ -18,7 +18,7 @@ const products = [
   {
     name: "Лавочки",
     description: "Уличные скамьи на любой вкус",
-    href: "/catalog/banches",
+    href: "/catalog?category=banches",
     icon: (
       <svg
         width="96"
@@ -37,7 +37,7 @@ const products = [
   {
     name: "Урны",
     description: "Урны для парков и улиц",
-    href: "/catalog/urns",
+    href: "/catalog?category=urns",
     icon: (
       <svg
         width="100"
@@ -57,7 +57,7 @@ const products = [
   {
     name: "Столы уличные",
     description: "Практичные уличные столы  по доступным ценам.",
-    href: "/catalog/tables",
+    href: "/catalog?category=tables",
     icon: (
       <svg
         width="99"
@@ -99,8 +99,8 @@ const products = [
   },
 ];
 const callsToAction = [
-  { name: "Наши работы", href: "#", icon: PlayCircleIcon },
-  { name: "Связаться с нами", href: "#", icon: PhoneIcon },
+  { name: "Наши работы", href: "/gallery", icon: PlayCircleIcon },
+  { name: "Связаться с нами", href: "/contact", icon: PhoneIcon },
 ];
 
 function classNames(...classes) {
@@ -111,10 +111,10 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className=" z-40 fixed w-[100%] shadow-sm bg-white">
-      <nav className=" flex con items-center p-3 lg:px-8" aria-label="Global">
+    <header className=" z-40 fixed w-[100%] flex-[0_0_auto] shadow-sm bg-white">
+      <nav className=" flex con items-center py-3  " aria-label="Global">
         <div className="flex flex-1">
-          <Link href="#" className="-m-1.5 p-1.5">
+          <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Logo</span>
             <svg
               width="59"
@@ -134,7 +134,7 @@ export default function Header() {
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
             <Popover.Button className="  focus-visible: outline-none flex items-center gap-x-1 text-sm font-semibold leading-6 text-neutral-950">
-              Каталог
+              <Link href="/catalog">Каталог</Link>
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
                 aria-hidden="true"
@@ -197,19 +197,19 @@ export default function Header() {
           </Popover>
 
           <Link
-            href="#"
+            href="/projects"
             className="text-sm font-semibold leading-6 text-neutral-950"
           >
             Проекты
           </Link>
           <Link
-            href="#"
+            href="/about"
             className="text-sm font-semibold leading-6 text-neutral-950"
           >
             О компании
           </Link>
           <Link
-            href="#"
+            href="/contact"
             className="text-sm font-semibold leading-6 text-neutral-950"
           >
             Контакты
@@ -219,7 +219,7 @@ export default function Header() {
         <div className=" justify-end  flex-initial flex items-center lg:flex-1  ">
           <SearchField />
           <Link
-            href="#"
+            href="/cart"
             className="text-sm font-semibold leading-6 text-neutral-950"
           >
             <ShoppingBagIcon
@@ -247,9 +247,9 @@ export default function Header() {
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-3 py-3 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-[100] w-full overflow-y-auto bg-white px-3 py-3 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <Link href="#" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Logo</span>
               <svg
                 width="59"
@@ -281,7 +281,7 @@ export default function Header() {
                   {({ open }) => (
                     <>
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-neutral-950 hover:bg-gray-50">
-                        Product
+                        Каталог
                         <ChevronDownIcon
                           className={classNames(
                             open ? "rotate-180" : "",
@@ -306,29 +306,23 @@ export default function Header() {
                   )}
                 </Disclosure>
                 <Link
-                  href="#"
+                  href="/project"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7  text-neutral-950 hover:bg-gray-50"
                 >
                   Проекты
                 </Link>
                 <Link
-                  href="#"
+                  href="/about"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-neutral-950 hover:bg-gray-50"
                 >
                   О компании
                 </Link>
                 <Link
-                  href="#"
+                  href="/contact"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-neutral-950 hover:bg-gray-50"
                 >
                   Контакты
                 </Link>
-              </div>
-              <div className="py-6">
-                <Link
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-neutral-950 hover:bg-gray-50"
-                ></Link>
               </div>
             </div>
           </div>

@@ -11,6 +11,9 @@
 .btn--out-black {
   @apply border-[1px] border-neutral-950 text-neutral-950 hover:bg-black hover:text-neutral-100;
 }
+.btn--out-black.active {
+  @apply bg-black text-white shadow-2xl;
+}
 .btn--fill-black {
   @apply bg-black text-white  hover:bg-white hover:text-neutral-950 border-[1px] hover:border-neutral-950;
 }
@@ -20,6 +23,9 @@
 .btn--lx {
   @apply px-5;
 }
+.long {
+  @apply px-4;
+}
 .swiper-button-prev,
 .swiper-button-next {
   @apply after:!text-[20px] after:text-white after:font-semibold after:content-none rounded-full bg-black  !h-[40px];
@@ -27,11 +33,44 @@
 .swiper-scrollbar {
   @apply !static mt-8;
 }
+.slide-active {
+  @apply !blur-none overflow-hidden duration-300 transition-all;
+}
+.scalesImg {
+  @apply hover:shadow-lg transition duration-300 ease-in-out;
+}
+.scalesImg:hover img {
+  @apply scale-[1.05] transition-all duration-300;
+}
+/* .slide-active img {
+  @apply scale-125 duration-300 transition-all;
+} */
 @layer {
   .con {
-    @apply container mx-auto w-[100%] h-[100%];
+    @apply container mx-auto px-3 w-[100%];
   }
   .home-catalog {
     @apply flex flex-col;
   }
+}
+
+.mySwiper2 {
+  height: 80%;
+  width: 100%;
+}
+
+.mySwiper {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
 }

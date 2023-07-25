@@ -5,7 +5,7 @@ const HomeGrid = () => {
   return (
     <div className=" con my-3 lg:my-10 grid grid-cols-1 lg:grid-rows-[repeat(2,minmax(100px,300px))] md:grid-rows-[repeat(4,minmax(100px,200px))] gap-[10px] lg:grid-cols-3 grid-rows-[repeat(4,minmax(100px,150px))] lg:gap-[15px] ">
       <Link
-        href=""
+        href="/catalog/b"
         className=" relative bg-gray-100 rounded-lg  flex flex-col justify-between"
       >
         <h3 className=" absolute bottom-4 left-4 lg:text-lg font-semibold">

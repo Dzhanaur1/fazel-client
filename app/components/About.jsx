@@ -21,7 +21,7 @@ const About = () => (
             <img
               src="about.jpg"
               alt="ongoing meeting"
-              className="w-full obejct-fit object-center object-cover h-full"
+              className="w-full obejct-fit object-center object-co h-full"
             />
           </div>
           <div className="mt-6 md:mt-10 grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6 lg:mt-6 2xl:mt-12">
