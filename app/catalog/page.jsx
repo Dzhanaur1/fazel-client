@@ -1,11 +1,4 @@
-import { XMarkIcon } from "@heroicons/react/24/outline";
-import {
-  ChevronDownIcon,
-  FunnelIcon,
-  MinusIcon,
-  PlusIcon,
-  Squares2X2Icon,
-} from "@heroicons/react/20/solid";
+
 import CatalogFilter from "../components/CatalogFilter";
 import CatalogGrid from "../components/CatalogGrid";
 import MobileFilter from "../components/CatalogFilter/MobileFilter";
