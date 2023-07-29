@@ -11,7 +11,9 @@ const CatalogFilter = () => {
   const dispatch = useDispatch();
   const url = useSelector((state) => state.filter.searchValue);
   console.log(url);
-  window.history.pushState({ path: url }, "", url);
+  typeof window !== "undefined"
+    ? window.history.pushState({ path: url }, "", url)
+    : "";
   useEffect(() => {
     fetchData(url ? url : undefined)
       .then((response) => {
