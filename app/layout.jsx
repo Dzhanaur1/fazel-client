@@ -1,7 +1,10 @@
+import { Provider } from "react-redux";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import "./globals.css";
 import { Noto_Sans } from "next/font/google";
+import { store } from "@/redux/store";
+import { ReduxProvider } from "@/redux/provider";
 
 const inter = Noto_Sans({ subsets: ["cyrillic"], weight: "400" });
 
@@ -14,13 +17,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className=" h-full">
       <body className={`${inter.className}  h-full`}>
-        <div className="flex flex-col h-full">
-          <Header />
-          <main className="pt-[48px] lg:pt-[56px] flex-[1_0_auto]">
-            {children}
-          </main>
-          <Footer />
-        </div>
+        <ReduxProvider>
+          <div className="flex flex-col h-full">
+            <Header />
+            <main className="pt-[48px] lg:pt-[56px] flex-[1_0_auto]">
+              {children}
+            </main>
+            <Footer />
+          </div>
+        </ReduxProvider>
       </body>
     </html>
   );

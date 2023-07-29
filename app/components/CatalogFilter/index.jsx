@@ -1,14 +1,28 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Disclosure } from "@headlessui/react";
 import { MinusIcon, PlusIcon } from "@heroicons/react/20/solid";
+import { fetchData } from "@/utils/getData";
+import { useDispatch, useSelector } from "react-redux";
+import { setSearchValue } from "@/redux/filter/slice";
+
 const CatalogFilter = () => {
-  const subCategories = [
-    { name: "Лавочки", href: "#" },
-    { name: "Урны", href: "#" },
-    { name: "Столы", href: "#" },
-    { name: "Беседки", href: "#" },
-  ];
+  const [data, setData] = useState();
+  const dispatch = useDispatch();
+  const url = useSelector((state) => state.filter.searchValue);
+  console.log(url);
+  window.history.pushState({ path: url }, "", url);
+  useEffect(() => {
+    fetchData(url ? url : undefined)
+      .then((response) => {
+        setData(response);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, [url]);
+
+  const categories = data?.categories;
   const filters = [
     {
       id: "back",
@@ -48,9 +62,11 @@ const CatalogFilter = () => {
         role="list"
         className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900"
       >
-        {subCategories.map((category) => (
-          <li key={category.name}>
-            <a href={category.href}>{category.name}</a>
+        {categories?.map((category) => (
+          <li key={category?.name}>
+            <a onClick={() => dispatch(setSearchValue(category.href))}>
+              {category?.name}
+            </a>
           </li>
         ))}
       </ul>

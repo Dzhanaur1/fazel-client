@@ -1,0 +1,115 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Скамейки",
+      "query": "banches",
+      "href": "catalog?category=banches"
+    },
+    {
+      "id": 2,
+      "name": "Урны",
+      "query": "urns",
+      "href": "catalog?category=urns"
+    },
+    {
+      "id": 3,
+      "name": "Столы",
+      "query": "tables",
+      "href": "catalog?category=tables"
+    },
+    {
+      "id": 4,
+      "name": "Беседки",
+      "query": "gazebos",
+      "href": "catalog?category=gazebos"
+    }
+  ],
+  "subСategories": [
+    {
+      "id": 1,
+      "category_id": 1,
+      "name": "Со спинкой"
+    },
+    {
+      "id": 2,
+      "category_id": 1,
+      "name": "Без спинки"
+    },
+    {
+      "id": 3,
+      "category_id": 1,
+      "name": "1500мм"
+    },
+    {
+      "id": 4,
+      "category_id": 1,
+      "name": "2500мм"
+    },
+    {
+      "id": 5,
+      "category_id": 1,
+      "name": "500мм"
+    },
+    {
+      "id": 6,
+      "category_id": 2,
+      "name": "Одинарные"
+    },
+    {
+      "id": 7,
+      "category_id": 2,
+      "name": "С сортировкой (эко)"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Лавочка Альфа",
+      "category": 1,
+      "subcategory": [1, 3, 4],
+      "price": 30000,
+      "top": true,
+      "sale": false,
+      "images": [
+        "https://mafproject.ru/wp-content/uploads/2021/06/1.-novaya-volna-so-spinkoj-1.jpg"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Лавочка Валенсия",
+      "category": 1,
+      "subcategory": [1, 3, 4],
+      "price": 30000,
+      "top": true,
+      "sale": false,
+      "images": [
+        "https://na-dache.pro/uploads/posts/2021-05/1619979745_72-p-lavochki-ulichnie-na-uchastke-78.jpg"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Урна Эко",
+      "category": 2,
+      "subcategory": [7],
+      "price": 30000,
+      "top": true,
+      "sale": false,
+      "images": [
+        "https://bratsk.toruda.ru/netcat_files/multifile/49126/urna-ulichnaya-eko-67094-sosna-foto-2.jpg"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Урна Альфа",
+      "category": 2,
+      "subcategory": [6],
+      "price": 22000,
+      "top": true,
+      "sale": false,
+      "images": [
+        "https://hozotdel.ru/wa-data/public/shop/products/23/70/7023/images/20684/20684.650@2x.jpg"
+      ]
+    }
+  ]
+}

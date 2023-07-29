@@ -1,15 +1,15 @@
 import Link from "next/link";
 import React from "react";
 
-const CatalogItem = () => {
+const CatalogItem = ({ id, name, category, price, images }) => {
   return (
     <Link
       href="catalog/item/1"
       className=" relative flex w-full h-full items-center flex-col justify-center hover:shadow-lg p-3 border border-neutral-300 rounded-lg scalesImg  "
     >
-      <img src="slider/alpha.png" className="" />
+      <img src={images} className="" />
       <div className="w-full flex flex-col">
-        <h3 className=" text-base lg:text-lg font-medium">Лавочка "Альфа"</h3>
+        <h3 className=" text-base lg:text-lg font-medium">{name}</h3>
         <div className="my-1 lg:my-3 flex flex-col gap-1">
           <p className=" text-sm lg:text-base text-gray-400">
             Материал: сталь,дерево
@@ -19,7 +19,7 @@ const CatalogItem = () => {
           </p>
         </div>
 
-        <p className=" lg:text-2xl font-medium ">от 30000 руб</p>
+        <p className=" lg:text-2xl font-medium ">от {price}</p>
       </div>
     </Link>
   );
