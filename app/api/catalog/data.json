@@ -4,62 +4,109 @@
       "id": 1,
       "name": "Скамейки",
       "query": "banches",
-      "href": "catalog?category=banches"
+      "href": "category=banches"
     },
     {
       "id": 2,
       "name": "Урны",
       "query": "urns",
-      "href": "catalog?category=urns"
+      "href": "category=urns"
     },
     {
       "id": 3,
       "name": "Столы",
       "query": "tables",
-      "href": "catalog?category=tables"
+      "href": "category=tables"
     },
     {
       "id": 4,
       "name": "Беседки",
       "query": "gazebos",
-      "href": "catalog?category=gazebos"
+      "href": "category=gazebos"
     }
   ],
   "subСategories": [
     {
-      "id": 1,
+      "id": "back",
       "category_id": 1,
-      "name": "Со спинкой"
+      "name": "Спинка",
+      "options": [
+        { "value": "true", "label": "Со спинкой" },
+        { "value": "false", "label": "Без спинки" }
+      ]
     },
     {
-      "id": 2,
+      "id": "style",
       "category_id": 1,
-      "name": "Без спинки"
+      "name": "Стиль",
+      "options": [
+        {
+          "value": "minimal",
+          "label": "Минимализм"
+        },
+        {
+          "value": "classic",
+          "label": "Классические"
+        },
+        {
+          "value": "park",
+          "label": "Парковые"
+        },
+        {
+          "value": "cast-iron",
+          "label": "Чугунные"
+        },
+        {
+          "value": "forged",
+          "label": "Кованные"
+        }
+      ]
+    },
+
+    {
+      "id": "material",
+      "name": "Материал",
+      "category_id": 0,
+      "options": [
+        {
+          "value": "wood",
+          "label": "Дерево"
+        },
+        {
+          "value": "metal",
+          "label": "Металл"
+        },
+        {
+          "value": "concrete",
+          "label": "Бетон"
+        },
+        {
+          "value": "aluminum",
+          "label": "Аллюминий"
+        },
+        {
+          "value": "stone",
+          "label": "Камень"
+        }
+      ]
     },
     {
-      "id": 3,
-      "category_id": 1,
-      "name": "1500мм"
-    },
-    {
-      "id": 4,
-      "category_id": 1,
-      "name": "2500мм"
-    },
-    {
-      "id": 5,
-      "category_id": 1,
-      "name": "500мм"
-    },
-    {
-      "id": 6,
+      "id": "eko",
+      "name": "Разделение",
       "category_id": 2,
-      "name": "Одинарные"
+      "options": [
+        { "value": "true", "label": "С разделнием" },
+        { "value": "false", "label": "Без разделения" }
+      ]
     },
     {
-      "id": 7,
+      "id": "ashtray",
       "category_id": 2,
-      "name": "С сортировкой (эко)"
+      "name": "Пепельница",
+      "options": [
+        { "value": "true", "label": "С пепельницой" },
+        { "value": "false", "label": "Без пепельницы" }
+      ]
     }
   ],
   "products": [
@@ -95,6 +142,8 @@
       "price": 30000,
       "top": true,
       "sale": false,
+      "eko": true,
+      "ashtray": false,
       "images": [
         "https://bratsk.toruda.ru/netcat_files/multifile/49126/urna-ulichnaya-eko-67094-sosna-foto-2.jpg"
       ]
@@ -107,6 +156,8 @@
       "price": 22000,
       "top": true,
       "sale": false,
+      "eko": false,
+      "ashtray": true,
       "images": [
         "https://hozotdel.ru/wa-data/public/shop/products/23/70/7023/images/20684/20684.650@2x.jpg"
       ]

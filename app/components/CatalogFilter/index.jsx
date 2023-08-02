@@ -4,13 +4,19 @@ import { Disclosure } from "@headlessui/react";
 import { MinusIcon, PlusIcon } from "@heroicons/react/20/solid";
 import { fetchData } from "@/utils/getData";
 import { useDispatch, useSelector } from "react-redux";
-import { setSearchValue } from "@/redux/filter/slice";
+import {
+  removeFilterValue,
+  setFilterValue,
+  setSearchValue,
+} from "@/redux/filter/slice";
+import { XMarkIcon } from "@heroicons/react/24/outline";
 
 const CatalogFilter = () => {
   const [data, setData] = useState();
+  const [selectedCategoryId, setIdSelectedCategory] = useState();
   const dispatch = useDispatch();
   const url = useSelector((state) => state.filter.searchValue);
-  console.log(url);
+
   typeof window !== "undefined"
     ? window.history.pushState({ path: url }, "", url)
     : "";
@@ -23,57 +29,56 @@ const CatalogFilter = () => {
         console.error(error);
       });
   }, [url]);
+  const subCategories = selectedCategoryId
+    ? data?.subCategories.filter(
+        (subCategory) =>
+          subCategory.category_id === selectedCategoryId ||
+          subCategory.category_id === 0
+      )
+    : data?.subCategories;
 
+  const selectFilter = (category) => {
+    dispatch(setFilterValue(category.href));
+    dispatch(setSearchValue());
+    setIdSelectedCategory(category.id);
+  };
+  const removeFilter = () => {
+    dispatch(removeFilterValue());
+    dispatch(setSearchValue());
+    setIdSelectedCategory(null);
+    console.log("remove");
+  };
   const categories = data?.categories;
-  const filters = [
-    {
-      id: "back",
-      name: "Спинка",
-      options: [
-        { value: "true", label: "Со спинкой", checked: false },
-        { value: "false", label: "Без спинки", checked: false },
-      ],
-    },
-    {
-      id: "category",
-      name: "Категория",
-      options: [
-        { value: "new-arrivals", label: "Минимализм", checked: false },
-        { value: "sale", label: "Классические", checked: false },
-        { value: "travel", label: "Парковые", checked: true },
-        { value: "organization", label: "Чугунные", checked: false },
-        { value: "accessories", label: "Кованные", checked: false },
-      ],
-    },
-    {
-      id: "",
-      name: "Материал",
-      options: [
-        { value: "wood", label: "Дерево", checked: false },
-        { value: "metal", label: "Металл", checked: false },
-        { value: "concrete", label: "Бетон", checked: false },
-        { value: "plastic", label: "Пластик", checked: false },
-        { value: "stone", label: "Камень", checked: true },
-      ],
-    },
-  ];
+
   return (
     <form className="block">
       <h3 className="sr-only">Категории</h3>
       <ul
         role="list"
-        className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900"
+        className=" border-b border-gray-200 pb-6 text-sm font-medium text-gray-900"
       >
         {categories?.map((category) => (
-          <li key={category?.name}>
-            <a onClick={() => dispatch(setSearchValue(category.href))}>
-              {category?.name}
+          <li
+            className={` cursor-pointer flex items-center justify-between p-2 ${
+              selectedCategoryId === category.id
+                ? " bg-neutral-200 rounded-lg"
+                : ""
+            }`}
+            key={category?.name}
+          >
+            <a onClick={() => selectFilter(category)}>{category?.name}</a>
+            <a onClick={removeFilter}>
+              <XMarkIcon
+                className={`  hidden w-4 h-4 text-neutral-600 ${
+                  selectedCategoryId === category.id ? "!block" : ""
+                }`}
+              />
             </a>
           </li>
         ))}
       </ul>
 
-      {filters.map((section) => (
+      {subCategories?.map((section) => (
         <Disclosure
           as="div"
           key={section.id}
@@ -97,7 +102,7 @@ const CatalogFilter = () => {
               </h3>
               <Disclosure.Panel className="pt-6">
                 <div className="space-y-4">
-                  {section.options.map((option, optionIdx) => (
+                  {section.options?.map((option, optionIdx) => (
                     <div key={option.value} className="flex items-center">
                       <input
                         id={`filter-${section.id}-${optionIdx}`}
