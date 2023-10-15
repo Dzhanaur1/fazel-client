@@ -1,8 +1,5 @@
 export const getAllProducts = async (query) => {
-  const response = await fetch(
-    `https://fazel-server.vercel.app/api/${query}`
-    // fetchURL != null ? `api/${fetchURL}` : "api/catalog"
-  );
+  const response = await fetch(`https://fazel-server.vercel.app/api/${query}`);
   if (!response.ok) throw new Error("Не удалось выполнить запрос");
 
   return response.json();
