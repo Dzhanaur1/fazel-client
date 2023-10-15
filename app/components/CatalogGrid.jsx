@@ -6,13 +6,10 @@ import { useSelector } from "react-redux";
 
 const CatalogGrid = () => {
   const [products, setProducts] = useState([]);
-  const currentQuery =
-    useSelector((state) => state.filter.queryValue) == ""
-      ? "catalog"
-      : useSelector((state) => state.filter.queryValue);
+  const currentQuery = useSelector((state) => state.filter.queryValue);
 
   useEffect(() => {
-    getAllProducts(currentQuery)
+    getAllProducts(currentQuery == "" ? "catalog" : currentQuery)
       .then((response) => {
         setProducts(response);
       })
