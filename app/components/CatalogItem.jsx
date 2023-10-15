@@ -1,25 +1,20 @@
 import Link from "next/link";
 import React from "react";
+import { getProductByID } from "@/utils/getData";
 
-const CatalogItem = ({ id, name, category, price, images }) => {
+const CatalogItem = (props) => {
   return (
     <Link
       href="catalog/item/1"
-      className=" relative flex w-full h-full items-center flex-col justify-center hover:shadow-lg p-3 border border-neutral-300 rounded-lg scalesImg  "
+      className=" relative flex w-full h-full items-center flex-col hover:shadow-lg p-3 border border-neutral-300 rounded-lg scalesImg  "
     >
-      <img src={images} className="" />
-      <div className="w-full flex flex-col">
-        <h3 className=" text-base lg:text-lg font-medium">{name}</h3>
-        <div className="my-1 lg:my-3 flex flex-col gap-1">
-          <p className=" text-sm lg:text-base text-gray-400">
-            Материал: сталь,дерево
-          </p>
-          <p className="text-sm lg:text-base text-gray-400">
-            Размеры: 1500-3000х600х860 мм
-          </p>
-        </div>
+      <img src={props.img} className=" object-contain h-[209px] w-auto" />
+      <div className=" my-3 w-full flex flex-col h-full justify-between">
+        <h3 className=" text-base lg:text-xl mt-2 ">{props.name}</h3>
 
-        <p className=" lg:text-2xl font-medium ">от {price}</p>
+        <p className=" lg:text-2xl  mt-4 font-semibold">
+          {props.price == 0 ? "По запросу" : `от ${props.price} руб`}
+        </p>
       </div>
     </Link>
   );

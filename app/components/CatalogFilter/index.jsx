@@ -4,54 +4,55 @@ import { Disclosure } from "@headlessui/react";
 import { MinusIcon, PlusIcon } from "@heroicons/react/20/solid";
 import { fetchData } from "@/utils/getData";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  removeFilterValue,
-  setFilterValue,
-  setSearchValue,
-} from "@/redux/filter/slice";
+// import data from "../../api/catalog/data.json";
+import { setCategoryValue, setQueryValue } from "@/redux/filter/slice";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-
+const data = [
+  {
+    id: 1,
+    name: "Скамейки",
+    query: "bench",
+    href: "category=banches",
+  },
+  {
+    id: 2,
+    name: "Урны",
+    query: "urn",
+    href: "category=urns",
+  },
+  {
+    id: 3,
+    name: "Столы",
+    query: "table",
+    href: "category=tables",
+  },
+  {
+    id: 4,
+    name: "Беседки",
+    query: "gazebo",
+    href: "category=gazebos",
+  },
+];
 const CatalogFilter = () => {
-  const [data, setData] = useState();
   const [selectedCategoryId, setIdSelectedCategory] = useState();
   const dispatch = useDispatch();
-  const url = useSelector((state) => state.filter.searchValue);
-
-  typeof window !== "undefined"
-    ? window.history.pushState({ path: url }, "", url)
-    : "";
-  useEffect(() => {
-    fetchData(url ? url : undefined)
-      .then((response) => {
-        setData(response);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, [url]);
-  const subCategories = selectedCategoryId
-    ? data?.subCategories.filter(
-        (subCategory) =>
-          subCategory.category_id === selectedCategoryId ||
-          subCategory.category_id === 0
-      )
-    : data?.subCategories;
-
   const selectFilter = (category) => {
-    dispatch(setFilterValue(category.href));
-    dispatch(setSearchValue());
     setIdSelectedCategory(category.id);
+    dispatch(setCategoryValue(category.query));
+    dispatch(setQueryValue());
+    console.log(category.query);
   };
+  const selectedFilter = useSelector((state) => state.filter.queryValue);
+  console.log(selectedFilter);
   const removeFilter = () => {
-    dispatch(removeFilterValue());
-    dispatch(setSearchValue());
     setIdSelectedCategory(null);
     console.log("remove");
   };
-  const categories = data?.categories;
+  const categories = data;
+  const subCategories = [];
 
   return (
-    <form className="block">
+    <form className="flex flex-col">
       <h3 className="sr-only">Категории</h3>
       <ul
         role="list"
@@ -59,14 +60,19 @@ const CatalogFilter = () => {
       >
         {categories?.map((category) => (
           <li
-            className={` cursor-pointer flex items-center justify-between p-2 ${
+            className={` cursor-pointer flex items-center justify-between p-2 transition-all duration-200 ${
               selectedCategoryId === category.id
                 ? " bg-neutral-200 rounded-lg"
                 : ""
             }`}
             key={category?.name}
           >
-            <a onClick={() => selectFilter(category)}>{category?.name}</a>
+            <a
+              className="w-full h-full text-base"
+              onClick={() => selectFilter(category)}
+            >
+              {category?.name}
+            </a>
             <a onClick={removeFilter}>
               <XMarkIcon
                 className={`  hidden w-4 h-4 text-neutral-600 ${
@@ -126,6 +132,7 @@ const CatalogFilter = () => {
           )}
         </Disclosure>
       ))}
+      <button className="btn btn--out-black px-4 py-5">Отправить</button>
     </form>
   );
 };

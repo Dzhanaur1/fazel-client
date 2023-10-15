@@ -1,26 +1,26 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import CatalogItem from "./CatalogItem";
-import { fetchData } from "@/utils/getData";
+import { getAllProducts } from "@/utils/getData";
 import { useSelector } from "react-redux";
 
 const CatalogGrid = () => {
   const [products, setProducts] = useState([]);
-  const search = useSelector((state) => state.filter.searchValue);
+  const currentQuery = useSelector((state) => state.filter.queryValue);
+
   useEffect(() => {
-    fetchData(search ? search : undefined)
+    getAllProducts(currentQuery)
       .then((response) => {
-        setProducts(response.currentProducts);
+        setProducts(response);
       })
       .catch((error) => {
         console.error(error);
       });
-    console.log(search);
-  }, [search]);
-
+  }, [currentQuery]);
+  console.log(products);
   return (
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3  gap-x-8 gap-y-8 items-center">
-      {products.map((product, i) => (
+    <div className="grid min-[480px]:grid-cols-2   lg:grid-cols-3  gap-x-8 gap-y-8 items-center">
+      {products?.map((product, i) => (
         <CatalogItem key={i} {...product} />
       ))}
     </div>

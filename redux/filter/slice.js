@@ -1,26 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  searchValue: "",
-  filterValue: "",
+  queryValue: "",
   categoryValue: "",
 };
 const filterSlice = createSlice({
   name: "filter",
   initialState,
   reducers: {
-    setSearchValue(state, action) {
-      state.searchValue = "catalog?" + state.filterValue + state.categoryValue;
+    setQueryValue(state, action) {
+      state.queryValue = "catalog?category=" + state.categoryValue;
     },
-    setFilterValue(state, action) {
-      state.filterValue = action.payload;
-      console.log(state.filterValue);
+    setCategoryValue(state, action) {
+      state.categoryValue = action.payload;
+      console.log(state.queryValue);
     },
-    removeFilterValue(state, action) {
-      state.filterValue = "";
+    removeCategoryValue(state, action) {
+      state.categoryValue = "category=";
     },
+    setOptiposValue(state, action) {},
   },
 });
-export const { setSearchValue, setFilterValue, removeFilterValue } =
+export const { setQueryValue, setCategoryValue, removeCategoryValue } =
   filterSlice.actions;
 export default filterSlice.reducer;
