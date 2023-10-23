@@ -8,7 +8,7 @@ const CatalogItem = (props) => {
       href="catalog/item/1"
       className=" relative flex w-full h-full items-center flex-col hover:shadow-lg p-3 border border-neutral-300 rounded-lg scalesImg  "
     >
-      <img src={props.img} className=" object-contain h-[209px] w-auto" />
+      <img src={props.image} className=" object-contain h-[209px] w-auto" />
       <div className=" my-3 w-full flex flex-col h-full justify-between">
         <h3 className=" text-base lg:text-xl mt-2 ">{props.name}</h3>
 

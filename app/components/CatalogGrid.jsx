@@ -6,18 +6,23 @@ import { useSelector } from "react-redux";
 
 const CatalogGrid = () => {
   const [products, setProducts] = useState([]);
-  const currentQuery = useSelector((state) => state.filter.queryValue);
-
+  const order = useSelector((state) => state.filter.orderValue);
+  const category = useSelector((state) => state.filter.categoryValue);
+  console.log(order);
   useEffect(() => {
-    getAllProducts(currentQuery == "" ? "catalog" : currentQuery)
-      .then((response) => {
+    const fetchData = async () => {
+      try {
+        const response = await getAllProducts(category, order);
         setProducts(response);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error(error);
-      });
-  }, [currentQuery]);
-  console.log(products);
+        setProducts([]);
+      }
+    };
+    console.log(order);
+    fetchData();
+  }, [category, order]);
+
   return (
     <div className="grid min-[480px]:grid-cols-2   lg:grid-cols-3  gap-x-8 gap-y-8 items-center">
       {products?.map((product, i) => (

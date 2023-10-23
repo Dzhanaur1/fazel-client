@@ -1,44 +1,29 @@
+"use client";
 import React from "react";
-import { BsTrash, BsTrash2Fill } from "react-icons/bs";
 
-const ProductItem = () => {
-  return (
-    <div className="flex items-center  justify-between mb-6">
-      <div className="flex-[2]">
-        <img
-          src="slider/alpha.png"
-          alt="Product Image"
-          className=" object-cover rounded"
-        />
-      </div>
-      <div className=" flex-[2] pl-4">
-        <h2 className="text-sm lg:text-lg font-semibold mb-2">
-          Лавочка "Альфа"
-        </h2>
-        <p className="text-gray-600 lg:text-sm text-[11px] mb-1">
-          Длина: 1500мм
-        </p>
-        <p className="text-gray-600 lg:text-sm text-[11px] mb-1">Цвет: Таль</p>
-      </div>
-      <div className=" flex flex-1 justify-center gap-1 lg:gap-4 items-center">
-        <button className=" btn btn--out-black !py-1">-</button>
-        <p className="px-2 lg:px-4 py-1 rounded-lg  bg-neutral-300">2</p>
-        <button className=" !py-1 btn btn--out-black">+</button>
-      </div>
-      <button className="ml-[8px]">
-        <BsTrash />
-      </button>
-    </div>
-  );
-};
+import CartItem from "../components/CartItem";
+import { useSelector } from "react-redux";
 
 const ShoppingCart = () => {
+  const cartItems = useSelector((state) => state.cart.items);
+  console.log(cartItems);
   return (
     <div className="con max-w-[980px] flex-col lg:flex-row pt-4 lg:pt-10 flex">
       <div className="flex flex-col flex-[3] gap-2 lg:gap-5 lg:mr-10">
+        {/* {cartItems.lenght > 0 ? (
+          <React.Fragment>
+            <h3 className="text-lg font-bold mb-2">Корзина </h3>
+            {cartItems.map((product, i) => {
+              <ProductItem key={i} {...product} />;
+            })}
+          </React.Fragment>
+        ) : (
+          <h2>Корзина пустая</h2>
+        )} */}
         <h3 className="text-lg font-bold mb-2">Корзина </h3>
-        <ProductItem />
-        <ProductItem />
+        {cartItems.map((product, i) => (
+          <CartItem key={i} {...product} />
+        ))}
       </div>
       <div className="flex-1 ">
         <div className="flex flex-col gap-4">

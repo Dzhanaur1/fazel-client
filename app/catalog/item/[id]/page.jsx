@@ -3,6 +3,7 @@ import ProductPageSlider from "@/app/components/ProductPage/ProductPageSlider";
 import ProductTabs from "@/app/components/ProductPage/ProductTabs";
 import Slider from "@/app/components/HomeSlider";
 import { getProductByID } from "@/utils/getData";
+import Button from "@/app/components/AddToCartButtom";
 
 const ItemPage = async ({ params: { id } }) => {
   const [product] = await getProductByID(id);
@@ -48,9 +49,7 @@ const ItemPage = async ({ params: { id } }) => {
           <ProductTabs items={colors} />
 
           <span className="text-2xl font-bold">от {product.price} руб</span>
-          <button className="btn btn--fill-black max-w-[220px] my-4">
-            Добавить в корзину
-          </button>
+          <Button {...product} />
         </div>
       </div>
       <div className="my-8">

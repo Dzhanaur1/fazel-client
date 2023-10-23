@@ -1,6 +1,7 @@
 import CatalogFilter from "../components/CatalogFilter";
 import CatalogGrid from "../components/CatalogGrid";
 import MobileFilter from "../components/CatalogFilter/MobileFilter";
+import CatalogSort from "../components/CatalogSort";
 
 const CatalogPage = () => {
   return (
@@ -8,6 +9,7 @@ const CatalogPage = () => {
       <div className="w-full flex justify-between">
         <h1 className="text-lg font-bold lg:text-2xl ">Каталог</h1>
       </div>
+      <CatalogSort />
       <div className="flex gap-10 mt-6 ">
         <div className="hidden md:block flex-1 ">
           <CatalogFilter />
@@ -21,4 +23,3 @@ const CatalogPage = () => {
   );
 };
 export default CatalogPage;
-

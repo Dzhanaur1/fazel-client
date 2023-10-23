@@ -1,30 +1,5 @@
 {
-  "categories": [
-    {
-      "id": 1,
-      "name": "Скамейки",
-      "query": "banches",
-      "href": "category=banches"
-    },
-    {
-      "id": 2,
-      "name": "Урны",
-      "query": "urns",
-      "href": "category=urns"
-    },
-    {
-      "id": 3,
-      "name": "Столы",
-      "query": "tables",
-      "href": "category=tables"
-    },
-    {
-      "id": 4,
-      "name": "Беседки",
-      "query": "gazebos",
-      "href": "category=gazebos"
-    }
-  ],
+ 
   "subСategories": [
     {
       "id": "back",

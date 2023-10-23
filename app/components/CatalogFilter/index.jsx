@@ -5,7 +5,7 @@ import { MinusIcon, PlusIcon } from "@heroicons/react/20/solid";
 import { fetchData } from "@/utils/getData";
 import { useDispatch, useSelector } from "react-redux";
 // import data from "../../api/catalog/data.json";
-import { setCategoryValue, setQueryValue } from "@/redux/filter/slice";
+import { setCategoryValue } from "@/redux/filter/slice";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 const data = [
   {
@@ -39,13 +39,13 @@ const CatalogFilter = () => {
   const selectFilter = (category) => {
     setIdSelectedCategory(category.id);
     dispatch(setCategoryValue(category.query));
-    dispatch(setQueryValue());
     console.log(category.query);
   };
-  const selectedFilter = useSelector((state) => state.filter.queryValue);
+  const selectedFilter = useSelector((state) => state.filter.categoryValue);
   console.log(selectedFilter);
   const removeFilter = () => {
     setIdSelectedCategory(null);
+    dispatch(setCategoryValue(""));
     console.log("remove");
   };
   const categories = data;
@@ -132,7 +132,7 @@ const CatalogFilter = () => {
           )}
         </Disclosure>
       ))}
-      <button className="btn btn--out-black px-4 py-5">Отправить</button>
+      {/* <button className="btn btn--out-black px-4 py-5">Отправить</button> */}
     </form>
   );
 };

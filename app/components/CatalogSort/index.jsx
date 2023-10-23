@@ -1,88 +1,92 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useRef, useState } from "react";
 import {
   ChevronDownIcon,
   FunnelIcon,
   Squares2X2Icon,
 } from "@heroicons/react/20/solid";
-import { Menu, Transition } from "@headlessui/react";
+import { setOrderValue } from "@/redux/filter/slice";
+import { useDispatch, useSelector } from "react-redux";
+
 const CatalogSort = () => {
-  const sortOptions = [
-    { name: "Most Popular", href: "#", current: true },
-    { name: "Best Rating", href: "#", current: false },
-    { name: "Newest", href: "#", current: false },
-    { name: "Price: Low to High", href: "#", current: false },
-    { name: "Price: High to Low", href: "#", current: false },
+  const sortOrders = [
+    { name: " возрастанию", href: "ASC", current: true },
+    { name: "убыванию", href: "DSC", current: false },
   ];
-  function classNames(...classes) {
-    return classes.filter(Boolean).join(" ");
-  }
+  const dispatch = useDispatch();
+  const orderSelector = useSelector((state) => state.filter.orderValue);
+  // useEffect(() => {
+  //   const handleClickOutside = (event) => {
+  //     const _event = event;
+
+  //     if (sortRef.current && !_event.path.includes(sortRef.current)) {
+  //       setOpen(false);
+  //     }
+  //   };
+
+  //   document.body.addEventListener("click", handleClickOutside);
+
+  //   return () => document.body.removeEventListener("click", handleClickOutside);
+  // }, []);
+  const [selectedOrder, setSelectedOrder] = useState("");
+  const sortRef = useRef();
+  const orderOnCLick = (order) => {
+    setSelectedOrder(order.name);
+    dispatch(setOrderValue(order.href));
+    setOpen(!isOpen);
+    console.log(orderSelector);
+  };
+  const [isOpen, setOpen] = useState(false);
   return (
-    <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
-      <h1 className="text-4xl font-bold tracking-tight text-gray-900">
-        Каталог
-      </h1>
-
-      <div className="flex items-center">
-        <Menu as="div" className="relative inline-block text-left">
-          <div>
-            <Menu.Button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
-              Сортировать
-              <ChevronDownIcon
-                className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
-                aria-hidden="true"
-              />
-            </Menu.Button>
-          </div>
-
-          <Transition
-            as={React.Fragment}
-            enter="transition ease-out duration-100"
-            enterFrom="transform opacity-0 scale-95"
-            enterTo="transform opacity-100 scale-100"
-            leave="transition ease-in duration-75"
-            leaveFrom="transform opacity-100 scale-100"
-            leaveTo="transform opacity-0 scale-95"
+    <div ref={sortRef} className="flex justify-end ">
+      <div className="flex flex-column relative">
+        <div className={`flex  items-center gap-2 `}>
+          <b
+            onClick={() => setOpen(!isOpen)}
+            className=" cursor-pointer text-sm lg:text-base"
           >
-            <Menu.Items className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
-              <div className="py-1">
-                {sortOptions.map((option) => (
-                  <Menu.Item key={option.name}>
-                    {({ active }) => (
-                      <a
-                        href={option.href}
-                        className={classNames(
-                          option.current
-                            ? "font-medium text-gray-900"
-                            : "text-gray-500",
-                          active ? "bg-gray-100" : "",
-                          "block px-4 py-2 text-sm"
-                        )}
-                      >
-                        {option.name}
-                      </a>
-                    )}
-                  </Menu.Item>
-                ))}
-              </div>
-            </Menu.Items>
-          </Transition>
-        </Menu>
+            Сортировка по:
+          </b>
+          {selectedOrder == "" && (
+            <svg
+              className={` duration-75 transition-all ${
+                isOpen ? "rotate-180" : ""
+              }`}
+              width="10"
+              height="6"
+              viewBox="0 0 10 6"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 5C10 5.16927 9.93815 5.31576 9.81445 5.43945C9.69075 5.56315 9.54427 5.625 9.375 5.625H0.625C0.455729 5.625 0.309245 5.56315 0.185547 5.43945C0.061849 5.31576 0 5.16927 0 5C0 4.83073 0.061849 4.68424 0.185547 4.56055L4.56055 0.185547C4.68424 0.061849 4.83073 0 5 0C5.16927 0 5.31576 0.061849 5.43945 0.185547L9.81445 4.56055C9.93815 4.68424 10 4.83073 10 5Z"
+                fill="#2C2C2C"
+              />
+            </svg>
+          )}
 
-        <button
-          type="button"
-          className="-m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7"
-        >
-          <span className="sr-only">View grid</span>
-          <Squares2X2Icon className="h-5 w-5" aria-hidden="true" />
-        </button>
-        <button
-          type="button"
-          className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden"
-          onClick={() => setMobileFiltersOpen(true)}
-        >
-          <span className="sr-only">Filters</span>
-          <FunnelIcon className="h-5 w-5" aria-hidden="true" />
-        </button>
+          <span onClick={() => setOpen(!isOpen)} className=" cursor-pointer">
+            {selectedOrder}
+          </span>
+        </div>
+        {isOpen && (
+          <div className=" z-50 absolute top-[40px] right-0 py-2 rounded-lg bg-white shadow-lg">
+            <ul className=" flex flex-col gap-1 p-3 ">
+              {sortOrders.map((obj, i) => (
+                <li
+                  key={i}
+                  onClick={() => orderOnCLick(obj)}
+                  className={`py-1 px-3 rounded-md transition-all duration-150 cursor-pointer hover:bg-neutral-100 ${
+                    selectedOrder === obj.name ? " !bg-neutral-300" : ""
+                  }`}
+                >
+                  {obj.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );
