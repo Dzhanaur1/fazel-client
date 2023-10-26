@@ -1,3 +1,5 @@
+import { calcTotalPrice } from "@/utils/calcTotalPrice";
+
 const { createSlice } = require("@reduxjs/toolkit");
 const data =
   typeof window !== "undefined" && localStorage.getItem("cart")
@@ -22,18 +24,21 @@ const cartSlice = createSlice({
           count: 1,
         });
       }
+      state.totalPrice = calcTotalPrice(state.items);
     },
     reduceItem(state, action) {
       const findItem = state.items.find((obj) => obj.id === action.payload.id);
       if (findItem && findItem?.count > 1) {
         findItem.count--;
       }
+      state.totalPrice = calcTotalPrice(state.items);
     },
     removeItem(state, action) {
-      state.items = state.items.filter((obj) => obj.id !== action.payload);
+      state.items = state.items.filter((obj) => obj.id !== action.payload.id);
+      state.totalPrice = calcTotalPrice(state.items);
       // state.totalPrice = calcTotalPrice(state.items);
     },
   },
 });
-export const { addItem, reduceItem } = cartSlice.actions;
+export const { addItem, reduceItem, removeItem } = cartSlice.actions;
 export default cartSlice.reducer;

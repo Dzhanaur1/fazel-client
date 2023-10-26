@@ -6,7 +6,7 @@ import { getProductByID } from "@/utils/getData";
 import Button from "@/app/components/AddToCartButtom";
 
 const ItemPage = async ({ params: { id } }) => {
-  const [product] = await getProductByID(id);
+  const product = await getProductByID(id);
   const sizes = [1500, 2500, 3000];
   const colors = ["Тик", "Палисандр", "Махагон"];
   console.log(product);
@@ -16,7 +16,7 @@ const ItemPage = async ({ params: { id } }) => {
   return (
     <div className="container mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <ProductPageSlider image={product.img} />
+        <ProductPageSlider image={product.image} />
         <div className="flex h-full flex-col justify-center shadow-2xl p-5 ">
           <h1 className="text-4xl  font-bold mb-4">Скамейка {product?.name}</h1>
 
