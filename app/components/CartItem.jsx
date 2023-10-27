@@ -1,4 +1,5 @@
 import { addItem, reduceItem, removeItem } from "@/redux/cart/slice";
+import Link from "next/link";
 import { BsTrash, BsTrash2Fill } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 const CartItem = (product) => {
@@ -8,11 +9,13 @@ const CartItem = (product) => {
   return (
     <div className="flex items-center  justify-between mb-6">
       <div className="flex-[2]">
-        <img
-          src={product.image}
-          alt="Product Image"
-          className=" object-cover rounded"
-        />
+        <Link href={`catalog/item/${product.id}`}>
+          <img
+            src={product.image}
+            alt="Product Image"
+            className=" object-cover rounded"
+          />
+        </Link>
       </div>
       <div className=" flex-[2] pl-4">
         <h2 className="text-sm lg:text-lg font-semibold mb-2">

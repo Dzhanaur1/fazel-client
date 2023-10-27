@@ -15,7 +15,7 @@ export const getAllProducts = async (category, order) => {
       }),
     }
   );
-
+  localStorage.setItem("allProducts", JSON.stringify(data));
   return data;
 };
 

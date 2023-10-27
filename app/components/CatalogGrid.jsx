@@ -12,8 +12,13 @@ const CatalogGrid = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await getAllProducts(category, order);
-        setProducts(response);
+        const cachedData = localStorage.getItem("allProducts");
+        if (cachedData) {
+          setProducts(JSON.parse(cachedData));
+        } else {
+          const response = await getAllProducts();
+          setProducts(response);
+        }
       } catch (error) {
         console.error(error);
         setProducts([]);
