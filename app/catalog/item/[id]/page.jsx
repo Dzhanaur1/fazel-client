@@ -5,12 +5,8 @@ import Slider from "@/app/components/HomeSlider";
 import { getProductByID } from "@/utils/getData";
 import Button from "@/app/components/AddToCartButtom";
 
-// export async function getServerSideProps(context) {
-//   console.log(context);
-// }
-
 const ItemPage = async ({ params: { id } }) => {
-  const product = await getProductByID(id);
+  const product = await getProductByID(1);
   console.log(product);
   // const sizes = [1500, 2500, 3000];
   // const colors = ["Тик", "Палисандр", "Махагон"];
@@ -18,7 +14,7 @@ const ItemPage = async ({ params: { id } }) => {
   return (
     <div className="container mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <ProductPageSlider image={product.image} />
+        <ProductPageSlider image={product?.image} />
         <div className="flex h-full flex-col py-10 justify-center gap-5 shadow-2xl px-5 ">
           <h1 className="text-4xl  font-bold mb-8">{product?.name}</h1>
 
@@ -26,15 +22,15 @@ const ItemPage = async ({ params: { id } }) => {
             <li>
               <div>
                 <p>
-                  <span>Высота: </span> {product?.Description.height}
+                  <span>Высота: </span> {product?.Description?.height}
                 </p>
                 <p>
                   <span>Ширина:</span>
-                  {product?.Description.width}мм
+                  {product?.Description?.width}мм
                 </p>
                 <p>
                   <span>Вес:</span>
-                  {product?.Description.weight}кг
+                  {product?.Description?.weight}кг
                 </p>
               </div>
             </li>
@@ -46,7 +42,7 @@ const ItemPage = async ({ params: { id } }) => {
           <p className=" text-lg font-medium mb-4">Цвет:</p>
           <ProductTabs items={colors} /> */}
 
-          <span className="text-2xl font-bold">от {product.price} руб</span>
+          <span className="text-2xl font-bold">от {product?.price} руб</span>
           <Button {...product} />
         </div>
       </div>
