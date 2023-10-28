@@ -3,7 +3,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="  bg-[url('/hero.png')] bg-cover bg-no-repeat h-[400px] md:h-[600px] lg:h-[100vh]  ">
+    <div className="  bg-[url('/hero.webp')] bg-cover bg-no-repeat h-[400px] md:h-[600px] lg:h-[100vh]  ">
       <div className=" w-[100%] mx-auto h-[100%] max-sm:backdrop-blur-sm ">
         <div className="con h-full flex justify-center">
           <div className=" px-2  h-[100%] flex justify-center  items-center  flex-col max-w-2xl text-center ">

@@ -237,9 +237,11 @@ export default function Header() {
                 className="h-5 mx-5 w-5 flex-none  text-gray-800"
                 aria-hidden="true"
               />
-              <div className=" w-4 h-4 text-xs rounded-full flex justify-center items-center absolute top-0 right-3 bg-red-700 text-neutral-100 font-light">
-                {totalCount}
-              </div>
+              {totalCount > 0 && (
+                <div className=" w-4 h-4 text-xs rounded-full flex justify-center items-center absolute top-0 right-3 bg-red-700 text-neutral-100 font-light">
+                  {totalCount}
+                </div>
+              )}
             </div>
           </Link>
         </div>

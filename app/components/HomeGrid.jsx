@@ -14,7 +14,7 @@ const HomeGrid = () => {
         </h3>
         <img
           className=" absolute right-0 bottom-0 max-h-[150px] md:max-h-[100%]"
-          src="home/bench.png"
+          src="home/bench.webp"
           alt=""
         ></img>
       </Link>
@@ -42,7 +42,7 @@ const HomeGrid = () => {
         </h3>
         <img
           className=" max-w-[50%] absolute bottom-0 right-0 lg:right-10 lg:bottom-10 max-h-[100%]"
-          src="home/table.png"
+          src="home/table.webp"
           alt=""
         ></img>
       </Link>
@@ -56,7 +56,7 @@ const HomeGrid = () => {
         </h3>
         <img
           className=" absolute right-0 bottom-[50%] translate-y-1/2 max-h-[100%]"
-          src="home/gazebos.png"
+          src="home/gazebos.webp"
           alt=""
         ></img>
       </Link>
