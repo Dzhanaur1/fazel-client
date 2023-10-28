@@ -23,7 +23,6 @@ export const getProductByID = async (id) => {
   const { data } = await axios.get(
     `https://fazel-server.vercel.app/api/product/${id}`
   );
-  // if (!data.ok) throw new Error("Не удалось выполнить запрос");
 
   return data;
 };
