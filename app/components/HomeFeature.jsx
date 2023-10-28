@@ -52,7 +52,7 @@ const Feature = () => {
         <div className="lg:w-7/12 lg:mt-0 mt-8">
           <div className="flex w-full h-full max-h-[200px] md:max-h-[350px] bg-red-200">
             <img
-              src="feature/bench.jpg"
+              src="feature/bench.webp"
               alt="apartment design"
               className=" object-cover"
             />
@@ -60,14 +60,14 @@ const Feature = () => {
           <div className="flex  gap-2 md:gap-5 mt-2 md:mt-5">
             <div className=" flex  flex-1 max-h-[300px] md:max-h-[350px] ">
               <img
-                src="feature/bench-2.jpg"
+                src="feature/bench-2.webp"
                 className=" object-cover object-bottom"
                 alt="kitchen"
               />
             </div>
             <div className=" flex  flex-1  max-h-[350px]">
               <img
-                src="feature/urn.jpg"
+                src="feature/urn.webp"
                 className="object-cover object-bottom"
                 alt="sitting room"
               />
