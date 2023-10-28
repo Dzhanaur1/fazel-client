@@ -1,9 +1,10 @@
 import { calcTotalPrice } from "@/utils/calcTotalPrice";
+import { getCartFromLS } from "@/utils/getCartFromLS";
 
 const { createSlice } = require("@reduxjs/toolkit");
 const data =
   typeof window !== "undefined" && localStorage.getItem("cart")
-    ? getCartItemsFromLS()
+    ? getCartFromLS()
     : {
         items: [],
 

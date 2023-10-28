@@ -1,5 +1,5 @@
 "use client";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
@@ -13,6 +13,7 @@ import {
 } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import SearchField from "./Search";
+import { useSelector } from "react-redux";
 
 const products = [
   {
@@ -109,7 +110,16 @@ function classNames(...classes) {
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+  const cartItems = useSelector((state) => state.cart.items);
+  const totalCount = cartItems.reduce((sum, item) => sum + item.count, 0);
+  const isMounted = useRef(false);
+  useEffect(() => {
+    if (isMounted.current) {
+      const json = JSON.stringify(cartItems);
+      localStorage.setItem("cart", json);
+    }
+    isMounted.current = true;
+  }, [cartItems]);
   return (
     <header className=" z-40 fixed w-[100%] flex-[0_0_auto] shadow-sm bg-white">
       <nav className=" flex con items-center py-3  " aria-label="Global">
@@ -222,10 +232,15 @@ export default function Header() {
             href="/cart"
             className="text-sm font-semibold leading-6 text-neutral-950"
           >
-            <ShoppingBagIcon
-              className="h-5 mx-5 w-5 flex-none text-gray-800"
-              aria-hidden="true"
-            />
+            <div className="relative">
+              <ShoppingBagIcon
+                className="h-5 mx-5 w-5 flex-none  text-gray-800"
+                aria-hidden="true"
+              />
+              <div className=" w-4 h-4 text-xs rounded-full flex justify-center items-center absolute top-0 right-3 bg-red-700 text-neutral-100 font-light">
+                {totalCount}
+              </div>
+            </div>
           </Link>
         </div>
         <div className=" justify-center flex-initial  flex lg:hidden lg:flex-1 ">
