@@ -1,5 +1,5 @@
 import CatalogFilter from "../components/CatalogFilter";
-import CatalogGrid from "../components/CatalogGrid";
+import CatalogGrid from "../components/Catalog";
 import MobileFilter from "../components/CatalogFilter/MobileFilter";
 import CatalogSort from "../components/CatalogSort";
 

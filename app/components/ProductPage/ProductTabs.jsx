@@ -2,10 +2,7 @@
 import React, { useState } from "react";
 
 const ProductTabs = ({ items }) => {
-  // console.log(items);
-  items.map((item) => {
-    // console.log(item);
-  });
+  items.map((item) => {});
   const [activeItem, setActiveItem] = useState(null);
   return (
     <ul className="flex w-full gap-3 mb-6">

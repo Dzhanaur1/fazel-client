@@ -13,7 +13,6 @@ import "swiper/css/thumbs";
 // import required modules
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 const ProductPageSlider = ({ image }) => {
-  console.log(image);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
     <div>

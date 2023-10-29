@@ -21,10 +21,6 @@ const ShoppingCart = () => {
         ) : (
           <h2>Корзина пустая</h2>
         )}
-        {/* <h3 className="text-lg font-bold mb-2">Корзина </h3>
-        {cartItems.map((product, i) => (
-          <CartItem key={i} {...product} />
-        ))} */}
       </div>
       {cartItems.length > 0 && (
         <div className="flex-1 ">

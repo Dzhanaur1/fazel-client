@@ -116,7 +116,7 @@ export default function Header() {
   useEffect(() => {
     if (isMounted.current) {
       const json = JSON.stringify(cartItems);
-      localStorage.setItem("cart", json);
+      localStorage.setItem("cart-fazel", json);
     }
     isMounted.current = true;
   }, [cartItems]);

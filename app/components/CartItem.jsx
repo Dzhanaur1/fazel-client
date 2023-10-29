@@ -24,8 +24,8 @@ const CartItem = (product) => {
         <p className="text-gray-600 lg:text-sm text-[11px] mb-1">
           Размеры:
           <br />
-          {product.Description.lenght} x {product.Description.width} x
-          {product.Description.height}
+          {product.Description.length} x {product.Description.width} x
+          {product.Description.heigth}
         </p>
         <p className="text-gray-600 lg:text-sm text-[11px] mb-1">
           Материал: Лиственница

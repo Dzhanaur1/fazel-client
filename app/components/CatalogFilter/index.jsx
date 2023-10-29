@@ -1,12 +1,13 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { Disclosure } from "@headlessui/react";
-import { MinusIcon, PlusIcon } from "@heroicons/react/20/solid";
-import { fetchData } from "@/utils/getData";
+import React, { useState } from "react";
+
 import { useDispatch, useSelector } from "react-redux";
 // import data from "../../api/catalog/data.json";
 import { setCategoryValue } from "@/redux/filter/slice";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import { useRouter } from "next/navigation";
+
+import Link from "next/link";
 const data = [
   {
     id: 1,
@@ -34,22 +35,37 @@ const data = [
   },
 ];
 const CatalogFilter = () => {
+  const router = useRouter();
   const [selectedCategoryId, setIdSelectedCategory] = useState();
+
+  const { orderValue } = useSelector((state) => state.filter);
+  //   useEffect(() => {
+  // console.log(or);
+  //   }, [categoryValue, orderValue]);
+
+  const updateURLParams = (category, order) => {
+    router.push(
+      `/catalog?${category.length > 0 ? `category=${category}` : ""}${
+        order.length > 0
+          ? `${category.length > 0 ? "&" : ""}order=${order}`
+          : ""
+      }`
+    );
+  };
   const dispatch = useDispatch();
   const selectFilter = (category) => {
     setIdSelectedCategory(category.id);
     dispatch(setCategoryValue(category.query));
-    console.log(category.query);
+    updateURLParams(category.query, orderValue);
   };
-  const selectedFilter = useSelector((state) => state.filter.categoryValue);
-  console.log(selectedFilter);
+
+  // console.log(selectedFilter, selectedSort);
   const removeFilter = () => {
     setIdSelectedCategory(null);
     dispatch(setCategoryValue(""));
-    console.log("remove");
+    updateURLParams("", orderValue);
   };
   const categories = data;
-  const subCategories = [];
 
   return (
     <form className="flex flex-col">
@@ -68,6 +84,7 @@ const CatalogFilter = () => {
             key={category?.name}
           >
             <a
+              // href={`/catalog?category=bench&order=asc`}
               className="w-full h-full text-base"
               onClick={() => selectFilter(category)}
             >
@@ -84,7 +101,7 @@ const CatalogFilter = () => {
         ))}
       </ul>
 
-      {subCategories?.map((section) => (
+      {/* {subCategories?.map((section) => (
         <Disclosure
           as="div"
           key={section.id}
@@ -131,8 +148,9 @@ const CatalogFilter = () => {
             </>
           )}
         </Disclosure>
-      ))}
-      {/* <button className="btn btn--out-black px-4 py-5">Отправить</button> */}
+      ))} */}
+      {/*       
+      <button className="btn btn--out-black px-4 py-5">Отправить</button> */}
     </form>
   );
 };

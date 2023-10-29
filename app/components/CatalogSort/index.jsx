@@ -8,34 +8,32 @@ import {
 } from "@heroicons/react/20/solid";
 import { setOrderValue } from "@/redux/filter/slice";
 import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/navigation";
 
 const CatalogSort = () => {
+  const router = useRouter();
   const sortOrders = [
-    { name: " возрастанию", href: "ASC", current: true },
-    { name: "убыванию", href: "DSC", current: false },
+    { name: " возрастанию", href: "asc", current: true },
+    { name: "убыванию", href: "dsc", current: false },
   ];
+  const updateURLParams = (category, order) => {
+    router.push(
+      `/catalog?${category.length > 0 ? `category=${category}` : ""}${
+        order.length > 0
+          ? `${category.length > 0 ? "&" : ""}order=${order}`
+          : ""
+      }`
+    );
+  };
   const dispatch = useDispatch();
-  const orderSelector = useSelector((state) => state.filter.orderValue);
-  // useEffect(() => {
-  //   const handleClickOutside = (event) => {
-  //     const _event = event;
-
-  //     if (sortRef.current && !_event.path.includes(sortRef.current)) {
-  //       setOpen(false);
-  //     }
-  //   };
-
-  //   document.body.addEventListener("click", handleClickOutside);
-
-  //   return () => document.body.removeEventListener("click", handleClickOutside);
-  // }, []);
+  const { categoryValue } = useSelector((state) => state.filter);
   const [selectedOrder, setSelectedOrder] = useState("");
   const sortRef = useRef();
   const orderOnCLick = (order) => {
     setSelectedOrder(order.name);
     dispatch(setOrderValue(order.href));
     setOpen(!isOpen);
-    console.log(orderSelector);
+    updateURLParams(categoryValue, order.href);
   };
   const [isOpen, setOpen] = useState(false);
   return (
