@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Feature = () => {
@@ -15,7 +16,8 @@ const Feature = () => {
             только функциональным, но и красивым, то наши изделия - это именно
             то, что вам нужно.
           </p>
-          <button
+          <Link
+            href={"/catalog"}
             aria-label="view catalogue"
             className="focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none mt-6 md:mt-8 text-base font-semibold leading-none text-gray-800 flex items-center hover:underline"
           >
@@ -47,7 +49,7 @@ const Feature = () => {
                 strokeLinejoin="round"
               />
             </svg>
-          </button>
+          </Link>
         </div>
         <div className="lg:w-7/12 lg:mt-0 mt-8">
           <div className="flex w-full h-full max-h-[200px] md:max-h-[350px] bg-red-200">

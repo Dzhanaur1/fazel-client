@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 const CartItem = (product) => {
   console.log(useSelector((state) => state.cart.items));
   const dispatch = useDispatch();
-
+  console.log(product);
   return (
     <div className="flex items-center  justify-between mb-6">
       <div className="flex-[2]">
@@ -24,8 +24,8 @@ const CartItem = (product) => {
         <p className="text-gray-600 lg:text-sm text-[11px] mb-1">
           Размеры:
           <br />
-          {product.Description.length} x {product.Description.width} x
-          {product.Description.heigth}
+          {product.Description.lenght} x {product.Description.width} x
+          {product.Description.height}
         </p>
         <p className="text-gray-600 lg:text-sm text-[11px] mb-1">
           Материал: Лиственница
