@@ -3,11 +3,14 @@ import React, { useState } from "react";
 
 import CartItem from "../components/CartItem";
 import { useSelector } from "react-redux";
+import PopupForm from "../components/PopupForm";
+import { XMarkIcon } from "@heroicons/react/24/outline";
 
 const ShoppingCart = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const totalPrice = useSelector((state) => state.cart.totalPrice);
   const cartItems = useSelector((state) => state.cart.items);
-  console.log(cartItems);
+
   return (
     <div className="con max-w-[980px] flex-col lg:flex-row pt-4 lg:pt-10 flex">
       <div className="flex flex-col flex-[3] gap-2 lg:gap-5 lg:mr-10">
@@ -33,7 +36,22 @@ const ShoppingCart = () => {
             <p className="font-bold text-lg pb-2 border-b border-neutral-400">
               Итоговая цена: {totalPrice} руб
             </p>
-            <button className="mt-4 btn btn--out-black">Заказать</button>
+            <button
+              onClick={() => setIsOpen(true)}
+              className="mt-4 btn btn--out-black"
+            >
+              Заказать
+            </button>
+          </div>
+        </div>
+      )}
+      {isOpen && (
+        <div className=" absolute top-0 z-50 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-60">
+          <div className="bg-white rounded-lg w-[300px] lg:w-[450px] h-auto relative py-5">
+            <button onClick={() => setIsOpen(false)} className=" block">
+              <XMarkIcon className=" absolute right-2 top-2 w-6 h-6 " />
+            </button>
+            <PopupForm cartItems={cartItems} />
           </div>
         </div>
       )}
