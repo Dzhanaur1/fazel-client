@@ -104,7 +104,6 @@ const Contact = () => {
               placeholder="Оставьте комментарий..."
               defaultValue={""}
             />
-            {errors.description && <span>This field is required</span>}
           </div>
           <button
             // type="submit"

@@ -3,7 +3,7 @@ import { getCartFromLS } from "@/utils/getCartFromLS";
 
 const { createSlice } = require("@reduxjs/toolkit");
 const data =
-  typeof window !== "undefined" && localStorage.getItem("cart")
+  typeof window !== "undefined" && localStorage.getItem("cart-fazel")
     ? getCartFromLS()
     : {
         items: [],
@@ -26,6 +26,7 @@ const cartSlice = createSlice({
         });
       }
       state.totalPrice = calcTotalPrice(state.items);
+      console.log(state.items);
     },
     reduceItem(state, action) {
       const findItem = state.items.find((obj) => obj.id === action.payload.id);

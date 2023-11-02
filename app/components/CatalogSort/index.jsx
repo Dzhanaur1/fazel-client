@@ -14,7 +14,7 @@ const CatalogSort = () => {
   const router = useRouter();
   const sortOrders = [
     { name: " возрастанию", href: "asc", current: true },
-    { name: "убыванию", href: "dsc", current: false },
+    { name: "убыванию", href: "desc", current: false },
   ];
   const updateURLParams = (category, order) => {
     router.push(

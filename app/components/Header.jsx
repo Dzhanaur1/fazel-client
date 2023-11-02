@@ -19,7 +19,7 @@ const products = [
   {
     name: "Лавочки",
     description: "Уличные скамьи на любой вкус",
-    href: "/catalog?category=banches",
+    href: "/catalog?category=bench",
     icon: (
       <svg
         width="96"
@@ -38,7 +38,7 @@ const products = [
   {
     name: "Урны",
     description: "Урны для парков и улиц",
-    href: "/catalog?category=urns",
+    href: "/catalog?category=urn",
     icon: (
       <svg
         width="100"
@@ -56,9 +56,9 @@ const products = [
     ),
   },
   {
-    name: "Столы уличные",
-    description: "Практичные уличные столы  по доступным ценам.",
-    href: "/catalog?category=tables",
+    name: "Спортивное оборудование",
+    description: "Тренажеры.Воркаунт оборудование. Спортивные комплексы",
+    href: "/catalog?category=sport",
     icon: (
       <svg
         width="99"
@@ -75,10 +75,10 @@ const products = [
     ),
   },
   {
-    name: "Беседки",
-    description:
-      "Уютные беседки для приятных встреч и отдыха на свежем воздухе",
-    href: "/catalog/gazebos",
+    name: "Игровые комплексы",
+    description: "Игровые комплексы для детей всех возрастов",
+    href: "/catalog?category=igra",
+
     icon: (
       <svg
         width="90"
