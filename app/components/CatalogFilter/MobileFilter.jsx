@@ -16,6 +16,7 @@ const MobileFilter = () => {
         </button>
       </div>
       <div
+        onClick={() => setIsOpen(false)}
         className={`z-[300] fixed top-0 left-0  bg-black bg-opacity-60  w-full h-full ${
           isOpen ? " visible" : " collapse"
         }`}

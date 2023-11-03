@@ -2,14 +2,21 @@ import React from "react";
 import ProductPageSlider from "@/app/components/ProductPage/ProductPageSlider";
 import ProductTabs from "@/app/components/ProductPage/ProductTabs";
 import Slider from "@/app/components/HomeSlider";
-import { getProductByID } from "@/utils/getData";
+import { getAllProducts, getProductByID } from "@/utils/getData";
 import Button from "@/app/components/AddToCartButtom";
+import axios from "axios";
+export async function generateStaticParams() {
+  const { data } = await axios.get(
+    "https://fazel-server.vercel.app/api/catalog"
+  );
+  const porducts = data;
+  return porducts.map((product) => {
+    slug: product.id.toString();
+  });
+}
 
 const ItemPage = async ({ params: { id } }) => {
   const product = await getProductByID(1);
-  console.log(product);
-  // const sizes = [1500, 2500, 3000];
-  // const colors = ["Тик", "Палисандр", "Махагон"];
 
   return (
     <div className="container mx-auto">
