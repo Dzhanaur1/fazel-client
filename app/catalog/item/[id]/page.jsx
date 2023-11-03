@@ -14,9 +14,18 @@ export async function generateStaticParams() {
     slug: product.id.toString();
   });
 }
+// async function getData(id) {
+//   const res = await fetch(`http://localhost:3000/api/product/1`);
 
+//   if (!res.ok) {
+//     throw new Error("Failed to fetch data");
+//   }
+
+//   return res.json();
+// }
 const ItemPage = async ({ params: { id } }) => {
-  const product = await getProductByID(1);
+  const product = await getProductByID(id);
+  console.log(product);
 
   return (
     <div className="container mx-auto">
