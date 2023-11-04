@@ -6,26 +6,27 @@ import { getAllProducts, getProductByID } from "@/utils/getData";
 import Button from "@/app/components/AddToCartButtom";
 import axios from "axios";
 export async function generateStaticParams() {
-  const { data } = await axios.get(
-    "https://fazel-server.vercel.app/api/catalog"
-  );
-  const porducts = data;
-  return porducts.map((product) => {
-    slug: product.id.toString();
-  });
+  // const { data } = await axios.get(
+  //   "https://fazel-server.vercel.app/api/catalog"
+  // );
+  const products = await getAllProducts();
+  return products.map((product) => ({
+    id: product.id.toString(),
+  }));
 }
-// async function getData(id) {
-//   const res = await fetch(`http://localhost:3000/api/product/1`);
+// Return a list of `params` to populate the [slug] dynamic segment
+// export async function generateStaticParams() {
+//   const products = await fetch("http://localhost:3002/api/catalog").then(
+//     (res) => res.json()
+//   );
 
-//   if (!res.ok) {
-//     throw new Error("Failed to fetch data");
-//   }
-
-//   return res.json();
+//   return products.map((product) => ({
+//     id: product.id.toString(),
+//   }));
 // }
+
 const ItemPage = async ({ params: { id } }) => {
   const product = await getProductByID(id);
-  console.log(product);
 
   return (
     <div className="container mx-auto">

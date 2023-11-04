@@ -15,13 +15,16 @@ export const getAllProducts = async (category, order) => {
       }),
     }
   );
-  localStorage.setItem("allProducts", JSON.stringify(data));
+  // localStorage.setItem("allProducts", JSON.stringify(data));
   return data;
 };
 
 export const getProductByID = async (id) => {
   const { data } = await axios.get(
-    `https://fazel-server.vercel.app/api/product/${id}`
+    `https://fazel-server.vercel.app/api/product/${id}`,
+    {
+      timeout: 10000,
+    }
   );
 
   return data;
