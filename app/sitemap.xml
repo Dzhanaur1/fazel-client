@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://fazel-client.vercel.app/</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/about</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/contact</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/cart</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog?category=bench</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog?category=urn</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog?category=igra</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog?category=sport</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog/item/1</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog/item/2</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog/item/3</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog/item/4</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog/item/5</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog/item/6</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog/item/7</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog/item/8</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog/item/9</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog/item/10</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog/item/11</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog/item/12</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog/item/13</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog/item/14</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog/item/15</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog/item/16</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog/item/17</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog/item/18</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog/item/19</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog/item/20</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog/item/21</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fazel-client.vercel.app/catalog/item/22</loc>
+  <lastmod>2023-11-04T07:02:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+
+</urlset>

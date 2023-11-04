@@ -20,6 +20,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className=" h-full">
       <head>
         <link rel="icon" href="/icons/Fazel.svg" type="image/svg+xml" />
+        <meta name="yandex-verification" content="04f7e6e6d5b9a2bb" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           itemprop="description"
