@@ -3,36 +3,25 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import ReactInputMask from "react-input-mask";
-const PopupForm = ({ cartItems }) => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [sendSuccess, setSuccess] = useState(null);
+
+const Form = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm();
-
-  const onSubmit = async (userData) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [sendSuccess, setSuccess] = useState(null);
+  const onSubmit = async (data) => {
     setIsLoading(true);
-    const data = {
-      name: userData.name,
-      phone: userData.phone,
-      email: userData.email,
-      description: userData.description,
-      products: cartItems.map((item) => ({
-        name: item.name,
-        quantity: item.count,
-        price: item.price,
-      })),
-    };
-
     try {
       const response = await axios.post(
-        "https://fazel-server.vercel.app/api/send-order-email",
+        "https://fazel-server.vercel.app/api/send-contact-email",
         data
       );
-      console.log(response.data);
+      console.log(response.data); // Optionally, you can handle the response from the server
+      // Выводите сообщение "Успешно" или "Ошибка" в зависимости от полученного ответа от сервера
       if (response.status === 200) {
         setSuccess(true);
         reset();
@@ -43,7 +32,7 @@ const PopupForm = ({ cartItems }) => {
       console.error(error);
       alert("Ошибка");
     } finally {
-      setIsLoading(false);
+      setIsLoading(false); // В любом случае, после получения ответа, установите isLoading в false
     }
   };
 
@@ -51,7 +40,7 @@ const PopupForm = ({ cartItems }) => {
     <React.Fragment>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-full gap-3 lg:gap-6 flex flex-col justify-center items-center"
+        className="w-full space-y-8 flex flex-col justify-center items-center"
       >
         <div className="w-full px-2 lg:px-5">
           <label
@@ -134,12 +123,12 @@ const PopupForm = ({ cartItems }) => {
         </button>
       </form>
       {isLoading && (
-        <div className="fixed w-full h-full z-50 bg-black bg-opacity-10 top-0 left-0 flex justify-center items-center   text-black font-semibold">
+        <div className="fixed w-full h-full z-30 bg-black bg-opacity-60 top-0 left-0 flex justify-center items-center   text-white font-semibold">
           Отправка...
         </div>
       )}
       {sendSuccess !== null && (
-        <div className="fixed w-full h-full z-30 bg-black bg-opacity-30 top-0 left-0 flex justify-center items-center   text-white font-semibold">
+        <div className="fixed w-full h-full z-30 bg-black bg-opacity-60 top-0 left-0 flex justify-center items-center   text-white font-semibold">
           <div className="flex w-[300px] h-[300px] justify-center items-center flex-col bg-white rounded-lg">
             <h3 className=" text-black mb-3">
               {sendSuccess
@@ -159,4 +148,4 @@ const PopupForm = ({ cartItems }) => {
   );
 };
 
-export default PopupForm;
+export default Form;

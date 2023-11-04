@@ -1,4 +1,5 @@
 import React from "react";
+import Form from "../components/Form";
 
 const Contact = () => {
   return (
@@ -82,33 +83,7 @@ const Contact = () => {
           </div>
           <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
             <div className="relative p-8  bg-white rounded-lg shadow-lg sm:p-12">
-              <form className="flex flex-col justify-center">
-                <ContactInputBox
-                  type="text"
-                  name="name"
-                  placeholder="Ваше имя"
-                />
-                <ContactInputBox
-                  type="text"
-                  name="email"
-                  placeholder="Ваша почта"
-                />
-                <ContactInputBox
-                  type="text"
-                  name="phone"
-                  placeholder="Ваш телефон"
-                />
-                <ContactTextArea
-                  row="6"
-                  placeholder="Ваш комментарий"
-                  name="details"
-                  defaultValue=""
-                />
-
-                <button type="submit" className="btn btn--out-black">
-                  Отравить сообщение
-                </button>
-              </form>
+              <Form />
             </div>
           </div>
         </div>

@@ -23,12 +23,12 @@ export default function RootLayout({ children }) {
         <meta name="yandex-verification" content="04f7e6e6d5b9a2bb" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
-          itemprop="description"
+          itemProp="description"
           name="description"
           content="Рекомендуем купить детские игровые городки и площадки у нас в профильной компании «Детские площадки» в Краснодаре. Осуществляем по желанию Клиента работы по бетонированию и качественную установку под ключ. Предоставляем длительную гарантию и быструю доставку."
         />
         <meta
-          itemprop="keywords"
+          itemProp="keywords"
           name="Keywords"
           content="детские площадки, купить, игровые, городки, спортивные, для детей, цена, недорогие, каталог"
         />
