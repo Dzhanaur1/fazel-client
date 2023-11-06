@@ -24,7 +24,7 @@ export async function generateMetadata({ params, searchParams }) {
       images: [product?.image],
       title: product.name,
       description: `${product.name} от произовдителя. Купите от ${product.price} руб`,
-      url: `${process.env.URL}/item/${id}`,
+      url: `https://fazel-client.vercel.app/item/${id}`,
       siteName: "Fazel",
     },
   };

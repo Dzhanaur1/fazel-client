@@ -11,11 +11,11 @@ export const metadata = {
   keywords:
     "детские площадки, спортивные площадки, игровые комплексы, наш двор, детская площадка купить, детские площадки купить, детские игровые площадки, качели, карусели, песочницы, горки, беседки, воркаут, вазоны, скамейки, урны, ограждения, веранды",
   openGraph: {
-    images: [`${process.env.URL}/home/ik.webp`],
+    images: [`https://fazel-client.vercel.app/home/ik.webp`],
     title: "Каталог продукции",
     description:
       "Каталог детских игровых и спортивных комплексов, элементов благоустройства от компании Fazel.",
-    url: `${process.env.URL}/catalog`,
+    url: "https://fazel-client.vercel.app/catalog",
     siteName: "Fazel",
     locale: "ru_RU",
     type: "website",
