@@ -5,6 +5,6 @@ export default function robots() {
       allow: "/",
       disallow: "/private/",
     },
-    sitemap: "https://acme.com/sitemap.xml",
+    sitemap: "https://fazel-client.vercel.app/sitemap.xml",
   };
 }

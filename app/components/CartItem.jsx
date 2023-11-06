@@ -1,11 +1,10 @@
 import { addItem, reduceItem, removeItem } from "@/redux/cart/slice";
 import Link from "next/link";
-import { BsTrash, BsTrash2Fill } from "react-icons/bs";
-import { useDispatch, useSelector } from "react-redux";
+import { BsTrash } from "react-icons/bs";
+import { useDispatch} from "react-redux";
 const CartItem = (product) => {
-  console.log(useSelector((state) => state.cart.items));
   const dispatch = useDispatch();
-  console.log(product);
+
   return (
     <div className="flex items-center  justify-between mb-6">
       <div className="flex-[2]">

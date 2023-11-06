@@ -148,7 +148,7 @@ export default function Header() {
       <nav className=" flex con items-center py-3  " aria-label="Global">
         <div className="flex flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Logo</span>
+            <span className="sr-only">Логотип</span>
             <svg
               width="59"
               height="22"
@@ -250,7 +250,7 @@ export default function Header() {
         </Popover.Group>
 
         <div className=" justify-end  flex-initial flex items-center lg:flex-1  ">
-          <SearchField />
+          {/* <SearchField /> */}
           <Link
             href="/cart"
             className="text-sm font-semibold leading-6 text-neutral-950"
@@ -290,7 +290,7 @@ export default function Header() {
         <Dialog.Panel className="fixed inset-y-0 right-0 z-[100] w-full overflow-y-auto bg-white px-3 py-3 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5">
-              <span className="sr-only">Logo</span>
+              <span className="sr-only">Логотип</span>
               <svg
                 width="59"
                 height="22"
@@ -309,7 +309,7 @@ export default function Header() {
               className="-m-2.5 rounded-md p-2.5 text-gray-700"
               onClick={() => setMobileMenuOpen(false)}
             >
-              <span className="sr-only">Close menu</span>
+              <span className="sr-only">Закрыть меню</span>
               <XMarkIcon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
@@ -346,18 +346,21 @@ export default function Header() {
                   )}
                 </Disclosure>
                 <Link
+                  onClick={() => setMobileMenuOpen(false)}
                   href="/project"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7  text-neutral-950 hover:bg-gray-50"
                 >
                   Проекты
                 </Link>
                 <Link
+                  onClick={() => setMobileMenuOpen(false)}
                   href="/about"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-neutral-950 hover:bg-gray-50"
                 >
                   О компании
                 </Link>
                 <Link
+                  onClick={() => setMobileMenuOpen(false)}
                   href="/contact"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-neutral-950 hover:bg-gray-50"
                 >

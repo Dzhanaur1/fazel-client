@@ -50,7 +50,7 @@ const HomeGrid = () => {
         href="/catalog?category=sport"
         className="relative bg-gray-100 rounded-lg  flex flex-col justify-between lg:row-start-1 lg:col-start-3 lg:row-span-2"
       >
-        <h3 className=" absolute bottom-4 left-4 lg:text-lg font-semibold">
+        <h3 className=" max-w-[50%] md:max-w-none absolute bottom-4 left-4 lg:text-lg font-semibold">
           Спортивные оборудование
           <span className=" ml-2">&#8594;</span>
         </h3>

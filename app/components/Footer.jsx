@@ -21,19 +21,19 @@ const Footer = () => {
         </div>
         <div className="flex flex-wrap sm:gap-10 gap-8 items-center justify-center mt-8">
           <Link
-            href=""
+            href="/about"
             className="hover:text-gray-500 text-base cursor-pointer leading-4  text-neutral-100"
           >
             О компании
           </Link>
           <Link
-            href=""
+            href="/contact"
             className="hover:text-gray-500 text-base cursor-pointer leading-4  text-neutral-100"
           >
             Связатья с нами
           </Link>
           <Link
-            href=""
+            href="/projects"
             className="hover:text-gray-500 text-base cursor-pointer leading-4  text-neutral-100"
           >
             Проекты

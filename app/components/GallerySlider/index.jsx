@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 const GallerySlider = () => {
-  const [activeSlide, setActiveSlide] = useState(1); // Устанавливаем начальное значение для активного слайда
+  const [activeSlide, setActiveSlide] = useState(1);
 
   const handleSlideChange = (swiper) => {
     setActiveSlide(swiper.realIndex);
@@ -14,11 +14,10 @@ const GallerySlider = () => {
     "https://source.unsplash.com/random",
     "https://source.unsplash.com/random",
   ];
-  //   slides.map((slides) => {
-  //     console.log(slides);
-  //   });
+
   return (
     <Swiper
+      id="ourworks"
       slidesPerView={1.3}
       spaceBetween={10}
       breakpoints={{
@@ -30,7 +29,7 @@ const GallerySlider = () => {
       initialSlide={1}
       parallax={true}
       onSlideChange={handleSlideChange}
-      className="con" // Обработчик события onSlideChange
+      className="con"
     >
       {slides.map((image, i) => (
         <SwiperSlide

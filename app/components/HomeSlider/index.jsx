@@ -1,6 +1,5 @@
 "use client";
-import Link from "next/link";
-import React, { useEffect } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Scrollbar } from "swiper/modules";
 
@@ -51,9 +50,6 @@ const Slider = () => {
 
   return (
     <div className="con mb-4 ">
-      {/* <h3 className="font-semibold text-base md:text-2xl my-6">
-        Популярные товары
-      </h3> */}
       <Swiper
         modules={[Navigation, Scrollbar]}
         breakpoints={{

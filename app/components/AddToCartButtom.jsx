@@ -9,7 +9,6 @@ const Button = (product) => {
   const findItem = cartItems.find((obj) => obj.id === product.id);
   const addToCart = () => {
     dispatch(addItem(product));
-    console.log(cartItems);
   };
 
   return (

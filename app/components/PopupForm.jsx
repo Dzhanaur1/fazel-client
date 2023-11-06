@@ -32,7 +32,7 @@ const PopupForm = ({ cartItems }) => {
         "https://fazel-server.vercel.app/api/send-order-email",
         data
       );
-      console.log(response.data);
+
       if (response.status === 200) {
         setSuccess(true);
         reset();

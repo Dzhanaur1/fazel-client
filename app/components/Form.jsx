@@ -20,8 +20,7 @@ const Form = () => {
         "https://fazel-server.vercel.app/api/send-contact-email",
         data
       );
-      console.log(response.data); // Optionally, you can handle the response from the server
-      // Выводите сообщение "Успешно" или "Ошибка" в зависимости от полученного ответа от сервера
+  
       if (response.status === 200) {
         setSuccess(true);
         reset();
@@ -29,7 +28,6 @@ const Form = () => {
         setSuccess(false);
       }
     } catch (error) {
-      console.error(error);
       alert("Ошибка");
     } finally {
       setIsLoading(false); // В любом случае, после получения ответа, установите isLoading в false

@@ -2,32 +2,23 @@
 import React, { useEffect, useState } from "react";
 import CatalogItem from "../CatalogItem";
 import { getAllProducts } from "@/utils/getData";
-import { useSelector } from "react-redux";
 import CatalogItemSkeleton from "./Sceleton";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 const CatalogGrid = () => {
   const searchParams = useSearchParams();
   const fiterCategory = searchParams.get("category");
   const sortOrder = searchParams.get("order");
   const [products, setProducts] = useState([]);
-  // const order = useSelector((state) => state.filter.orderValue);
   const [isLoading, setIsLoading] = useState(true);
-  // const category = useSelector((state) => state.filter.categoryValue);
-
-  console.log(fiterCategory, sortOrder);
-
+  const url = process.env.URL;
+  console.log(url);
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        // const cachedData = localStorage.getItem("allProducts");
-        // if (cachedData) {
-        //   setProducts(JSON.parse(cachedData));
-        // } else {
         const response = await getAllProducts(fiterCategory, sortOrder);
         setProducts(response);
-        // }
       } catch (error) {
         console.error(error);
         setProducts([]);
