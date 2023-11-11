@@ -5,7 +5,7 @@ import "./globals.css";
 import { Noto_Sans } from "next/font/google";
 import { store } from "@/redux/store";
 import { ReduxProvider } from "@/redux/provider";
-
+import { Analytics } from "@vercel/analytics/react";
 const inter = Noto_Sans({ subsets: ["cyrillic"], weight: "400" });
 
 export default function RootLayout({ children }) {
@@ -26,7 +26,9 @@ export default function RootLayout({ children }) {
         <ReduxProvider>
           <div className="flex flex-col h-full">
             <Header />
-            <main className="pt-[48px]  flex-[1_0_auto]">{children}</main>
+            <main className="pt-[48px]  flex-[1_0_auto]">
+              {children} <Analytics />{" "}
+            </main>
             <Footer />
           </div>
         </ReduxProvider>
