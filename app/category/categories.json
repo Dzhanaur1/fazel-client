@@ -1,0 +1,169 @@
+{
+  "categories": [
+    {
+      "id": "igra",
+      "name": "Детское игровое оборудование",
+      "subcategories": [
+        {
+          "id": "dik",
+          "name": "Детские игровые комплексы",
+          "subcategories": []
+        },
+        {
+          "id": "dik-m",
+          "name": "Детские игровые комплексы для малышей",
+          "subcategories": []
+        },
+        {
+          "id": "kacheli",
+          "name": "Детские уличные качели",
+          "subcategories": []
+        },
+        {
+          "id": "gorki",
+          "name": "Детские горки",
+          "subcategories": []
+        },
+        {
+          "id": "balansir",
+          "name": "Детские качалки - балансир",
+          "subcategories": []
+        },
+        {
+          "id": "carusel",
+          "name": "Детские карусели",
+          "subcategories": []
+        },
+        {
+          "id": "kachalki",
+          "name": "Детские качалки на пружинке",
+          "subcategories": []
+        },
+        {
+          "id": "domiki",
+          "name": "Детские игровые домики и веранды",
+          "subcategories": []
+        },
+        {
+          "id": "pesochnicy",
+          "name": "Детские песочницы",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "id": "blag",
+      "name": "Благоустройство территории",
+      "subcategories": [
+        {
+          "id": "bench",
+          "name": "скамьи",
+          "subcategories": []
+        },
+        {
+          "id": "urn",
+          "name": "Урны",
+          "subcategories": []
+        },
+        {
+          "id": "table",
+          "name": "Столы, беседки, кресла",
+          "subcategories": []
+        },
+        {
+          "id": "gazebo",
+          "name": "Перголы: навесы и беседки",
+          "subcategories": []
+        },
+        {
+          "id": "blag-other",
+          "name": "Прочее оборудование: вело парковки, стенды, столбики",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "id": "sport",
+      "name": "Зоны workout. уличные тренажеры",
+      "subcategories": [
+        {
+          "id": "ot",
+          "name": "Одиночные тренажеры",
+          "subcategories": []
+        },
+        {
+          "id": "kt",
+          "name": "Комбинированные тренажеры",
+          "subcategories": []
+        },
+        {
+          "id": "st",
+          "name": "Силовые тренажеры",
+          "subcategories": []
+        },
+        {
+          "id": "vorota",
+          "name": "Ворота, стойки, трибуны",
+          "subcategories": []
+        },
+        {
+          "id": "dsk",
+          "name": "Детские спортивные комплексы",
+          "subcategories": []
+        },
+        {
+          "id": "sport-equipment",
+          "name": "Уличные спортивные снаряды",
+          "subcategories": []
+        },
+        {
+          "id": "workout",
+          "name": "Оборудование workout.: комплексы и снаряды",
+          "subcategories": []
+        },
+        {
+          "id": "gto",
+          "name": "Полоса препятствий ГТО",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "id": "pokritie",
+      "name": "Резиновое покрытие ",
+      "subcategories": [
+        {
+          "id": "nalivnoe",
+          "name": "Наливное",
+          "subcategories": []
+        },
+        {
+          "id": "rezina",
+          "name": "Резиновая плитка",
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "id": "zabor",
+      "name": "Заборы и ограждения",
+      "subcategories": [
+        {
+          "id": "gazon",
+          "name": "Газонное, мобильное",
+          "subcategories": []
+        },
+        {
+          "id": "sp",
+          "name": "Ограждение спортивных площадок",
+          "subcategories": []
+        },
+        {
+          "id": "dp",
+          "name": "Ограждение детских площадок",
+          "subcategories": []
+        }
+      ]
+    }
+  ]
+}
