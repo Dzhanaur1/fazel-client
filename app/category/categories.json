@@ -3,6 +3,7 @@
     {
       "id": "igra",
       "name": "Детское игровое оборудование",
+      "image": "category/igra.jpg",
       "subcategories": [
         {
           "id": "dik",
@@ -54,6 +55,7 @@
     {
       "id": "blag",
       "name": "Благоустройство территории",
+      "image": "category/blag.jpg",
       "subcategories": [
         {
           "id": "bench",
@@ -85,6 +87,7 @@
     {
       "id": "sport",
       "name": "Зоны workout. уличные тренажеры",
+      "image": "category/sport.jpg",
       "subcategories": [
         {
           "id": "ot",
@@ -130,6 +133,7 @@
     },
     {
       "id": "pokritie",
+      "image": "category/rezina.jpg",
       "name": "Резиновое покрытие ",
       "subcategories": [
         {
@@ -147,6 +151,7 @@
     {
       "id": "zabor",
       "name": "Заборы и ограждения",
+      "image": "category/zabor.jpg",
       "subcategories": [
         {
           "id": "gazon",
