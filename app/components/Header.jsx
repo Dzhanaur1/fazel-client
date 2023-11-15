@@ -122,6 +122,135 @@ const products = [
     ),
   },
 ];
+const category = [
+  {
+    name: "Благоустройство территории",
+    description: "Урны. Лавчоки. Перголы. Столы.",
+    href: "/category/blag",
+    icon: (
+      <svg
+        width="100"
+        height="125"
+        viewBox="0 0 100 125"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M41 88.7H15.1V31.6H11.1V92.7H45V31.6H41V88.7Z" fill="black" />
+        <path
+          d="M55.5 29.6V92.7H89.4V29.6H55.5ZM85.3 33.6V50.9H59.5V33.6H85.3ZM70.4 54.9V88.7H66.8V54.9H70.4ZM74.4 54.9H78.1V88.7H74.4V54.9ZM59.5 54.9H62.9V88.7H59.5V54.9ZM82.1 88.7V54.9H85.3V88.7H82.1Z"
+          fill="black"
+        />
+      </svg>
+    ),
+  },
+  {
+    name: "Детское игровое оборудование",
+    description: "Игрвые комплексы. Качели. Горки. Карусли.",
+    href: "/category/igra",
+    icon: (
+      <svg
+        fill="#000000"
+        height="800px"
+        width="800px"
+        version="1.1"
+        id="Layer_1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 512 512"
+      >
+        <g>
+          <g>
+            <path
+              d="M116.87,166.956c-27.618,0-50.087,22.469-50.087,50.087v33.391c0,9.22,7.475,16.696,16.696,16.696h66.783
+			c9.22,0,16.696-7.475,16.696-16.696v-33.391C166.957,189.425,144.489,166.956,116.87,166.956z M133.565,233.739h-33.391v-16.696
+			c0-9.206,7.49-16.696,16.696-16.696s16.696,7.49,16.696,16.696V233.739z"
+            />
+          </g>
+        </g>
+        <g>
+          <g>
+            <path
+              d="M495.304,411.826c-45.342,0-78.471-25.254-93.246-59.028c-29.793-68.11-94.898-113.518-168.319-118.58V116.869
+			c0-4.251-1.676-8.584-4.877-11.792c-0.006-0.006-0.01-0.011-0.016-0.017L128.676,4.89c-6.519-6.52-17.091-6.52-23.611,0
+			L4.893,105.061c-0.006,0.006-0.01,0.011-0.016,0.017C1.709,108.254,0,112.526,0,116.869v378.435C0,504.525,7.475,512,16.696,512
+			h66.783c9.22,0,16.696-7.475,16.696-16.696v-27.826h33.391v27.826c0,9.22,7.475,16.696,16.696,16.696h66.783
+			c9.22,0,16.696-7.475,16.696-16.696V334.881c11.836,1.661,23.125,5.444,33.391,11.035v149.388c0,9.22,7.475,16.696,16.696,16.696
+			c9.22,0,16.696-7.475,16.696-16.696V375.642c12.018,17.035,12.348,29.813,33.391,57.608v62.054c0,9.22,7.475,16.696,16.696,16.696
+			s16.696-7.475,16.696-16.696v-27.572c35.069,28.381,78.047,44.268,128,44.268c9.22,0,16.696-7.475,16.696-16.696v-66.783
+			C512,419.301,504.525,411.826,495.304,411.826z M116.87,40.308l59.867,59.866H57.002L116.87,40.308z M133.565,434.087h-33.391
+			v-33.391h33.391V434.087z M133.565,367.304h-33.391v-33.391h33.391V367.304z M200.348,478.608h-33.391V317.217
+			c0-9.22-7.475-16.696-16.696-16.696H83.478c-9.22,0-16.696,7.475-16.696,16.696v161.391H33.391V133.565h166.957
+			C200.348,143.582,200.348,461.749,200.348,478.608z M478.609,478.041c-60.137-4.991-113.252-42.532-137.726-98.483
+			c-19.168-43.809-60.389-73.45-107.144-78.324v-33.536c60.137,4.991,113.252,42.532,137.726,98.483
+			c19.157,43.784,60.297,73.44,107.144,78.324V478.041z"
+            />
+          </g>
+        </g>
+      </svg>
+    ),
+  },
+  {
+    name: "Зоны workout. Уличные тренажеры",
+    description:
+      "Тренажеры. Спортивные комплексы. Спортивные снаряды. Workout.",
+    href: "/category/sport",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+        x="0px"
+        y="0px"
+        viewBox="0 0 24 30"
+      >
+        <g>
+          <g>
+            <path d="M23.5,7.996H7v-1h0.5c0.196,0,0.374-0.115,0.456-0.293c0.081-0.179,0.05-0.389-0.079-0.536l-3.5-4    c-0.19-0.218-0.563-0.218-0.753,0l-3.5,4c-0.129,0.148-0.161,0.357-0.079,0.536C0.126,6.881,0.304,6.996,0.5,6.996H1v14.5    c0,0.276,0.224,0.5,0.5,0.5s0.5-0.224,0.5-0.5v-0.5h4v0.5c0,0.276,0.224,0.5,0.5,0.5s0.5-0.224,0.5-0.5v-12.5h3v5.092    c-0.581,0.207-1,0.757-1,1.408c0,0.827,0.673,1.5,1.5,1.5c0.827,0,1.5-0.673,1.5-1.5c0-0.651-0.419-1.201-1-1.408V8.996h4v4.092    c-0.581,0.207-1,0.757-1,1.408c0,0.827,0.673,1.5,1.5,1.5c0.827,0,1.5-0.673,1.5-1.5c0-0.651-0.419-1.201-1-1.408V8.996h3v12.5    c0,0.276,0.224,0.5,0.5,0.5s0.5-0.224,0.5-0.5v-12.5h2v1.105c-0.3,0.125-0.5,0.353-0.5,0.645s0.2,0.52,0.5,0.645v1.46    c-0.3,0.125-0.5,0.353-0.5,0.645s0.2,0.52,0.5,0.645v1.46c-0.3,0.125-0.5,0.353-0.5,0.645s0.2,0.52,0.5,0.645v1.46    c-0.3,0.125-0.5,0.353-0.5,0.645s0.2,0.52,0.5,0.645v0.855c0,0.276,0.224,0.5,0.5,0.5s0.5-0.224,0.5-0.5v-0.855    c0.3-0.125,0.5-0.353,0.5-0.645s-0.2-0.52-0.5-0.645v-1.46c0.3-0.125,0.5-0.353,0.5-0.645s-0.2-0.52-0.5-0.645v-1.46    c0.3-0.125,0.5-0.353,0.5-0.645s-0.2-0.52-0.5-0.645v-1.46c0.3-0.125,0.5-0.353,0.5-0.645s-0.2-0.52-0.5-0.645V8.996h0.5    c0.276,0,0.5-0.224,0.5-0.5S23.776,7.996,23.5,7.996z M6,19.996H2v-2h4V19.996z M6,16.996H2v-2h4V16.996z M6,13.996H2v-2h4V13.996    z M6,10.996H2v-4h4V10.996z M1.602,5.996L4,3.255l2.398,2.741H1.602z M10.5,15.996c-0.276,0-0.5-0.224-0.5-0.5s0.224-0.5,0.5-0.5    s0.5,0.224,0.5,0.5S10.776,15.996,10.5,15.996z M15.5,14.996c-0.276,0-0.5-0.224-0.5-0.5s0.224-0.5,0.5-0.5s0.5,0.224,0.5,0.5    S15.776,14.996,15.5,14.996z" />
+          </g>
+        </g>
+      </svg>
+    ),
+  },
+  {
+    name: "Резиновое покрытие",
+    description: "Наливное покрытие. Резиновая плитка",
+    href: "/category/pokritie",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+        x="0px"
+        y="0px"
+        viewBox="0 0 100 125"
+        enable-background="new 0 0 100 100"
+      >
+        <path d="M94.2,41.8l-44-25.4c-0.4-0.2-0.9-0.2-1.2,0L5.1,41.8c-0.4,0.2-0.6,0.6-0.6,1.1v12.8c0,0.4,0.2,0.8,0.6,1.1L49,82.1  c0.2,0.1,0.4,0.2,0.6,0.2c0.2,0,0.4-0.1,0.6-0.2l43.9-25.4c0.4-0.2,0.6-0.6,0.6-1.1V42.8C94.8,42.4,94.6,42,94.2,41.8z M48.4,78.9  L6.9,55V45l41.5,24V78.9z M49.7,66.8l-41.5-24l41.5-24l41.5,24L49.7,66.8z M92.4,55L50.9,79V69l41.5-24V55z" />
+      </svg>
+    ),
+  },
+  {
+    name: "Заборы и ограждения",
+    description:
+      "Газонное, мобильное. Ограждение спортивных площадок. Ограждение детских площадок",
+    href: "/category/zabor",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+        viewBox="0 0 598 491.25"
+        x="0px"
+        y="0px"
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+      >
+        <g>
+          <path
+            class="fil0"
+            d="M0 0l598 0 0 25 -23 0 -1 342 16 0 0 26 -57 0 0 -26 16 0 0 -92 -495 0 0 92 15 0 0 26 -57 0 0 -26 17 0 1 -342 -30 0 0 -25zm528 25l0 225 21 0 0 -225 -21 0zm-11 225l0 -225 -25 0 0 225 25 0zm-37 0l0 -225 -25 0 0 225 25 0zm-36 0l0 -225 -25 0 0 225 25 0zm-37 0l0 -225 -25 0 0 225 25 0zm-37 0l0 -225 -24 0 0 225 24 0zm-36 0l0 -225 -25 0 0 225 25 0zm-37 0l0 -225 -25 0 0 225 25 0zm-36 0l0 -225 -25 0 0 225 25 0zm-37 0l0 -225 -25 0 0 225 25 0zm-36 0l0 -225 -25 0 0 225 25 0zm-37 0l0 -225 -25 0 0 225 25 0zm-36 0l0 -225 -25 0 0 225 25 0zm-37 0l0 -225 -23 0 -1 225 24 0z"
+          />
+        </g>
+      </svg>
+    ),
+  },
+];
 const callsToAction = [
   { name: "Наши работы", href: "/gallery", icon: PlayCircleIcon },
   { name: "Связаться с нами", href: "/contact", icon: PhoneIcon },
@@ -167,7 +296,7 @@ export default function Header() {
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
             <Popover.Button className="  focus-visible: outline-none flex items-center gap-x-1 text-sm font-semibold leading-6 text-neutral-950">
-              <Link href="/catalog">Каталог</Link>
+              <p>Продукция</p>
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
                 aria-hidden="true"
@@ -228,7 +357,65 @@ export default function Header() {
               </Popover.Panel>
             </Transition>
           </Popover>
+          <Popover className="relative">
+            <Popover.Button className="  focus-visible: outline-none flex items-center gap-x-1 text-sm font-semibold leading-6 text-neutral-950">
+              <Link href="/category">Каталог</Link>
+              <ChevronDownIcon
+                className="h-5 w-5 flex-none text-gray-400"
+                aria-hidden="true"
+              />
+            </Popover.Button>
 
+            <Transition
+              as={Fragment}
+              enter="transition ease-out duration-200"
+              enterFrom="opacity-0 translate-y-1"
+              enterTo="opacity-100 translate-y-0"
+              leave="transition ease-in duration-150"
+              leaveFrom="opacity-100 translate-y-0"
+              leaveTo="opacity-0 translate-y-1"
+            >
+              <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
+                <div className="p-4">
+                  {category.map((item) => (
+                    <div
+                      key={item.name}
+                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                    >
+                      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg  ">
+                        {item.icon}
+                      </div>
+                      <div className="flex-auto">
+                        <Link
+                          href={item.href}
+                          className="block font-semibold text-neutral-950"
+                        >
+                          {item.name}
+                          <span className="absolute inset-0" />
+                        </Link>
+                        <p className="mt-1 text-gray-600">{item.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
+                  {callsToAction.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-neutral-950 hover:bg-gray-100"
+                    >
+                      <item.icon
+                        className="h-5 w-5 flex-none text-gray-400"
+                        aria-hidden="true"
+                      />
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </Popover.Panel>
+            </Transition>
+          </Popover>
           <Link
             href="/projects"
             className="text-sm font-semibold leading-6 text-neutral-950"
@@ -321,7 +508,7 @@ export default function Header() {
                   {({ open }) => (
                     <>
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-neutral-950 hover:bg-gray-50">
-                        Каталог
+                        Продукция
                         <ChevronDownIcon
                           className={classNames(
                             open ? "rotate-180" : "",
@@ -332,6 +519,34 @@ export default function Header() {
                       </Disclosure.Button>
                       <Disclosure.Panel className="mt-2 space-y-2">
                         {[...products, ...callsToAction].map((item) => (
+                          <Disclosure.Button
+                            key={item.name}
+                            as="a"
+                            href={item.href}
+                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-neutral-950 hover:bg-gray-50"
+                          >
+                            {item.name}
+                          </Disclosure.Button>
+                        ))}
+                      </Disclosure.Panel>
+                    </>
+                  )}
+                </Disclosure>
+                <Disclosure as="div" className="-mx-3">
+                  {({ open }) => (
+                    <>
+                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-neutral-950 hover:bg-gray-50">
+                        Каталог
+                        <ChevronDownIcon
+                          className={classNames(
+                            open ? "rotate-180" : "",
+                            "h-5 w-5 flex-none"
+                          )}
+                          aria-hidden="true"
+                        />
+                      </Disclosure.Button>
+                      <Disclosure.Panel className="mt-2 space-y-2">
+                        {[...category, ...callsToAction].map((item) => (
                           <Disclosure.Button
                             key={item.name}
                             as="a"

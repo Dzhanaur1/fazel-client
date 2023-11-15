@@ -20,21 +20,20 @@ const MobileFilter = () => {
         className={`z-[300] fixed top-0 left-0  bg-black bg-opacity-60  w-full h-full ${
           isOpen ? " visible" : " collapse"
         }`}
+      ></div>
+      <div
+        className={`w-[70%] fixed py-3 top-0 left-0 z-[400] bg-white h-full flex flex-col shadow-2xl duration-200 trainsition  ${
+          isOpen ? " translate-x-0" : " -translate-x-[100%]"
+        }`}
       >
-        <div
-          className={`w-[70%] bg-white h-full flex flex-col shadow-2xl duration-200 trainsition  ${
-            isOpen ? " translate-x-0" : " -translate-x-[100%]"
-          }`}
-        >
-          <div className="flex h-[48px]  items-center gap-1 border-b border-neutral-200">
-            <button onClick={() => setIsOpen(false)}>
-              <XMarkIcon className=" ml-2 w-5 h-5" />
-            </button>
-            <p className="">Скрыть</p>
-          </div>
-          <div className="mt-4 px-3">
-            <CatalogFilter />
-          </div>
+        <div className="flex items-center gap-1 border-b border-neutral-200">
+          <button onClick={() => setIsOpen(false)}>
+            <XMarkIcon className=" ml-2 w-5 h-5" />
+          </button>
+          <p className="">Скрыть</p>
+        </div>
+        <div className="mt-4 px-3">
+          <CatalogFilter />
         </div>
       </div>
     </React.Fragment>
