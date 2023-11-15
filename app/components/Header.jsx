@@ -56,9 +56,9 @@ const products = [
     ),
   },
   {
-    name: "Спортивное оборудование",
-    description: "Тренажеры.Воркаунт оборудование. Спортивные комплексы",
-    href: "/catalog?category=sport",
+    name: "Детские спортивыне комплексы",
+    description: "Уличные спортивные комлпексы для детей",
+    href: "/catalog?category=dsk",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -76,9 +76,9 @@ const products = [
     ),
   },
   {
-    name: "Игровые комплексы",
+    name: " Деские игровые комплексы",
     description: "Игровые комплексы для детей всех возрастов",
-    href: "/catalog?category=igra",
+    href: "/catalog?category=dik",
 
     icon: (
       <svg
@@ -296,7 +296,7 @@ export default function Header() {
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
             <Popover.Button className="  focus-visible: outline-none flex items-center gap-x-1 text-sm font-semibold leading-6 text-neutral-950">
-              <p>Продукция</p>
+              <Link href="/catalog">Продукция</Link>
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
                 aria-hidden="true"
