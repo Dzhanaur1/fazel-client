@@ -8,46 +8,64 @@
         {
           "id": "dik",
           "name": "Детские игровые комплексы",
+          "query": "dik",
+
           "subcategories": []
         },
         {
           "id": "dik-m",
           "name": "Детские игровые комплексы для малышей",
+          "query": "dik-m",
+
           "subcategories": []
         },
         {
           "id": "kacheli",
           "name": "Детские уличные качели",
+          "query": "kacheli",
+
           "subcategories": []
         },
         {
           "id": "gorki",
           "name": "Детские горки",
+          "query": "gorki",
+
           "subcategories": []
         },
         {
           "id": "balansir",
           "name": "Детские качалки - балансир",
+          "query": "balansir",
+
           "subcategories": []
         },
         {
           "id": "carusel",
           "name": "Детские карусели",
+          "query": "carusel",
+
           "subcategories": []
         },
         {
           "id": "kachalki",
           "name": "Детские качалки на пружинке",
+          "query": "kachalki",
+
           "subcategories": []
         },
         {
           "id": "domiki",
           "name": "Детские игровые домики и веранды",
+          "query": "domiki",
+
           "subcategories": []
         },
         {
           "id": "pesochnicy",
           "name": "Детские песочницы",
+          "query": "pesochnicy",
+
           "subcategories": []
         }
       ]
@@ -59,74 +77,100 @@
       "subcategories": [
         {
           "id": "bench",
-          "name": "скамьи",
+          "name": "Скамьи",
+          "query": "bench",
+
           "subcategories": []
         },
         {
           "id": "urn",
           "name": "Урны",
+          "query": "urn",
+
           "subcategories": []
         },
         {
           "id": "table",
           "name": "Столы, беседки, кресла",
+          "query": "table",
+
           "subcategories": []
         },
         {
           "id": "gazebo",
           "name": "Перголы: навесы и беседки",
+          "query": "gazebo",
+
           "subcategories": []
         },
         {
           "id": "blag-other",
           "name": "Прочее оборудование: вело парковки, стенды, столбики",
+          "query": "blag-other",
+
           "subcategories": []
         }
       ]
     },
     {
       "id": "sport",
-      "name": "Зоны workout. уличные тренажеры",
+      "name": "Зоны workout. Уличные тренажеры",
       "image": "category/sport.jpg",
       "subcategories": [
         {
           "id": "ot",
           "name": "Одиночные тренажеры",
+          "query": "ot",
+
           "subcategories": []
         },
         {
           "id": "kt",
           "name": "Комбинированные тренажеры",
+          "query": "kt",
+
           "subcategories": []
         },
         {
           "id": "st",
           "name": "Силовые тренажеры",
+          "query": "st",
+
           "subcategories": []
         },
         {
           "id": "vorota",
           "name": "Ворота, стойки, трибуны",
+          "query": "vorota",
+
           "subcategories": []
         },
         {
           "id": "dsk",
           "name": "Детские спортивные комплексы",
+          "query": "dsk",
+
           "subcategories": []
         },
         {
           "id": "sport-equipment",
           "name": "Уличные спортивные снаряды",
+          "query": "sport-equipment",
+
           "subcategories": []
         },
         {
           "id": "workout",
           "name": "Оборудование workout.: комплексы и снаряды",
+          "query": "workout",
+
           "subcategories": []
         },
         {
           "id": "gto",
           "name": "Полоса препятствий ГТО",
+          "query": "gto",
+
           "subcategories": []
         }
       ]
@@ -139,11 +183,15 @@
         {
           "id": "nalivnoe",
           "name": "Наливное",
+          "query": "nalivnoe",
+
           "subcategories": []
         },
         {
           "id": "rezina",
           "name": "Резиновая плитка",
+          "query": "rezina",
+
           "subcategories": []
         }
       ]
@@ -156,16 +204,22 @@
         {
           "id": "gazon",
           "name": "Газонное, мобильное",
+          "query": "gazon",
+
           "subcategories": []
         },
         {
           "id": "sp",
           "name": "Ограждение спортивных площадок",
+          "query": "sp",
+
           "subcategories": []
         },
         {
           "id": "dp",
           "name": "Ограждение детских площадок",
+          "query": "dp",
+
           "subcategories": []
         }
       ]
