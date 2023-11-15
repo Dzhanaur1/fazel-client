@@ -6,7 +6,7 @@ import { setCategoryValue } from "@/redux/filter/slice";
 import { MinusIcon, PlusIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useRouter } from "next/navigation";
 import Categorydata from "@/app/category/categories.json";
-import { GoPlus } from "react-icons/go";
+
 const CatalogFilter = () => {
   const categories = Categorydata.categories;
   const [expandedCategories, setExpandedCategories] = useState([]);
