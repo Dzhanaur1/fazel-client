@@ -16,7 +16,7 @@ const Hero = () => {
               ценам.
             </p>
             <div className="mt-8">
-              <Link href="catalog" className="btn btn--out-light">
+              <Link href="/category" className="btn btn--out-light">
                 Перейти в каталог
               </Link>
             </div>
