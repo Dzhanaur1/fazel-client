@@ -6,7 +6,6 @@ import { setCategoryValue } from "@/redux/filter/slice";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { useRouter } from "next/navigation";
 
-import Link from "next/link";
 const data = [
   {
     id: 1,
