@@ -12,6 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className=" h-full">
       <head>
+        <meta name="google-site-verification" content="qwDLp0ssqVm-yU3rg5Ljt2O-pNK1C-4qJcPW0ENBYRw" />
         <link
           rel="icon"
           href="https://fazel-client.vercel.app/icons/Fazel.svg"

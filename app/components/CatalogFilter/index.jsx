@@ -3,8 +3,9 @@ import React, { useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { setCategoryValue } from "@/redux/filter/slice";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+import { MinusIcon, PlusIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useRouter } from "next/navigation";
+import Categorydata from "@/app/category/categories.json";
 
 const data = [
   {
@@ -32,9 +33,25 @@ const data = [
     href: "category=gazebos",
   },
 ];
+
 const CatalogFilter = () => {
+  const categories = Categorydata.categories;
+  const [expandedCategories, setExpandedCategories] = useState([]);
+  const toggleCategory = (categoryId) => {
+    if (expandedCategories.includes(categoryId)) {
+      setExpandedCategories(
+        expandedCategories.filter((id) => id !== categoryId)
+      );
+    } else {
+      setExpandedCategories([...expandedCategories, categoryId]);
+    }
+  };
+
+  const isCategoryExpanded = (categoryId) => {
+    return expandedCategories.includes(categoryId);
+  };
   const router = useRouter();
-  const [selectedCategoryId, setIdSelectedCategory] = useState();
+  const [selectedCategoryId, setIdSelectedCategory] = useState("");
 
   const { orderValue } = useSelector((state) => state.filter);
 
@@ -58,37 +75,62 @@ const CatalogFilter = () => {
     dispatch(setCategoryValue(""));
     updateURLParams("", orderValue);
   };
-  const categories = data;
 
   return (
     <form className="flex flex-col">
       <h3 className="sr-only">Категории</h3>
-      <ul
-        role="list"
-        className=" border-b border-gray-200 pb-6 text-sm font-medium text-gray-900"
-      >
-        {categories?.map((category) => (
-          <li
-            className={` cursor-pointer flex items-center justify-between p-2 transition-all duration-200 ${
-              selectedCategoryId === category.id
-                ? " bg-neutral-200 rounded-lg"
-                : ""
-            }`}
-            key={category?.name}
-          >
-            <a
-              className="w-full h-full text-base"
-              onClick={() => selectFilter(category)}
-            >
-              {category?.name}
-            </a>
-            <a onClick={removeFilter}>
-              <XMarkIcon
-                className={`  hidden w-4 h-4 text-neutral-600 ${
-                  selectedCategoryId === category.id ? "!block" : ""
+      <ul className="flex flex-col gap-6">
+        {categories.map((category, i) => (
+          <li key={category.id}>
+            <div className=" cursor-pointer flex justify-between  items-center ">
+              <h2 className=" font-semibold max-w-[70%]">{category.name}</h2>
+              {isCategoryExpanded(category.id) ? (
+                <MinusIcon
+                  onClick={() => toggleCategory(category.id)}
+                  width={24}
+                  height={24}
+                />
+              ) : (
+                <PlusIcon
+                  onClick={() => toggleCategory(category.id)}
+                  width={20}
+                  height={20}
+                />
+              )}
+            </div>
+            {isCategoryExpanded(category.id) && (
+              <ul
+                role="list"
+                className={` opacity-0 border-b transition-all duration-300  border-gray-200 pb-6 text-sm font-medium text-gray-900 ${
+                  isCategoryExpanded(category.id) ? " opacity-100" : ""
                 }`}
-              />
-            </a>
+              >
+                {category.subcategories?.map((subcategory) => (
+                  <li
+                    className={` cursor-pointer flex items-center justify-between p-2 transition-all duration-200 ${
+                      selectedCategoryId === subcategory.id
+                        ? " bg-neutral-200 rounded-lg"
+                        : ""
+                    }`}
+                    key={category?.name}
+                  >
+                    <a
+                      className="w-full h-full text-base"
+                      onClick={() => selectFilter(subcategory)}
+                    >
+                      {subcategory?.name}
+                    </a>
+                    <a onClick={removeFilter}>
+                      <XMarkIcon
+                        className={`  hidden w-4 h-4 text-neutral-600 ${
+                          selectedCategoryId === subcategory.id ? "!block" : ""
+                        }`}
+                      />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
           </li>
         ))}
       </ul>
