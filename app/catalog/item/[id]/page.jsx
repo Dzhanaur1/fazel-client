@@ -1,6 +1,6 @@
 import React from "react";
 import ProductPageSlider from "@/app/components/ProductPage/ProductPageSlider";
-import ProductTabs from "@/app/components/ProductPage/ProductTabs";
+
 import Slider from "@/app/components/HomeSlider";
 import { getAllProducts, getProductByID } from "@/utils/getData";
 import Button from "@/app/components/AddToCartButtom";
@@ -44,15 +44,15 @@ const ItemPage = async ({ params: { id } }) => {
             <li>
               <div>
                 <p>
-                  <span>Высота: </span> {product?.Description?.height}
+                  <span>Высота: </span> {product?.height}
                 </p>
                 <p>
                   <span>Ширина:</span>
-                  {product?.Description?.width}мм
+                  {product?.width}мм
                 </p>
                 <p>
                   <span>Вес:</span>
-                  {product?.Description?.weight}кг
+                  {product?.weight}кг
                 </p>
               </div>
             </li>
