@@ -10,7 +10,6 @@ import Categorydata from "@/app/category/categories.json";
 const CatalogFilter = () => {
   const categories = Categorydata.categories;
   const [expandedCategories, setExpandedCategories] = useState([]);
-
   const toggleCategory = (categoryId) => {
     if (expandedCategories.includes(categoryId)) {
       setExpandedCategories(
