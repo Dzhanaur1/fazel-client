@@ -1,7 +1,7 @@
 import { addItem, reduceItem, removeItem } from "@/redux/cart/slice";
 import Link from "next/link";
 import { BsTrash } from "react-icons/bs";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 const CartItem = (product) => {
   const dispatch = useDispatch();
 
@@ -23,8 +23,7 @@ const CartItem = (product) => {
         <p className="text-gray-600 lg:text-sm text-[11px] mb-1">
           Размеры:
           <br />
-          {product?.Description?.lenght} x {product?.Description?.width} x
-          {product?.Description?.height}
+          {product?.length} x {product?.width} x{product?.height} мм
         </p>
         <p className="text-gray-600 lg:text-sm text-[11px] mb-1">
           Материал: Лиственница

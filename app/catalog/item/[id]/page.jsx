@@ -44,19 +44,18 @@ const ItemPage = async ({ params: { id } }) => {
             <li>
               <div>
                 <p>
-                  <span>Высота: </span> {product?.height}
+                  <span>Длина: </span> {product?.length} мм
                 </p>
                 <p>
-                  <span>Ширина:</span>
-                  {product?.width}мм
+                  <span>Высота: </span> {product?.height} мм
                 </p>
                 <p>
-                  <span>Вес:</span>
-                  {product?.weight}кг
+                  <span>Ширина: </span>
+                  {product?.width} мм
                 </p>
               </div>
             </li>
-            <li>Материалы: Дерево и металл</li>
+            <li>Материалы: Дерево (лиственница) и металл</li>
           </ul>
           {/* <p className=" text-lg font-medium mb-4">Длина (в мм):</p>
 

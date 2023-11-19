@@ -357,7 +357,7 @@ export default function Header() {
               </Popover.Panel>
             </Transition>
           </Popover>
-          <Popover className="relative">
+          {/* <Popover className="relative">
             <Popover.Button className="  focus-visible: outline-none flex items-center gap-x-1 text-sm font-semibold leading-6 text-neutral-950">
               <Link href="/category">Каталог</Link>
               <ChevronDownIcon
@@ -415,7 +415,7 @@ export default function Header() {
                 </div>
               </Popover.Panel>
             </Transition>
-          </Popover>
+          </Popover> */}
           <Link
             href="/projects"
             className="text-sm font-semibold leading-6 text-neutral-950"
