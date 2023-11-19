@@ -21,10 +21,7 @@ export const getAllProducts = async (category, order) => {
 
 export const getProductByID = async (id) => {
   const { data } = await axios.get(
-    `https://fazel-server.vercel.app/api/product/${id}`,
-    {
-      timeout: 10000,
-    }
+    `https://fazel-server.vercel.app/api/product/${id}`
   );
 
   return data;

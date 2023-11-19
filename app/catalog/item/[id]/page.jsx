@@ -7,7 +7,7 @@ import Button from "@/app/components/AddToCartButtom";
 export async function generateStaticParams() {
   const products = await getAllProducts();
   return products.map((product) => ({
-    id: product.id.toString(),
+    id: product.index,
   }));
 }
 export async function generateMetadata({ params, searchParams }) {
@@ -18,12 +18,12 @@ export async function generateMetadata({ params, searchParams }) {
   const product = await getProductByID(id);
 
   return {
-    title: product.name,
-    description: `${product.name} от произовдителя. Купите от ${product.price} руб`,
+    title: product?.name,
+    description: `${product?.name} от произовдителя. Купите от ${product?.price} руб`,
     openGraph: {
       images: [product?.image],
       title: product.name,
-      description: `${product.name} от произовдителя. Купите от ${product.price} руб`,
+      description: `${product?.name} от произовдителя. Купите от ${product?.price} руб`,
       url: `https://fazel-client.vercel.app/item/${id}`,
       siteName: "Fazel",
     },
