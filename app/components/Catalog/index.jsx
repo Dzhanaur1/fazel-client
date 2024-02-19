@@ -5,20 +5,20 @@ import { getAllProducts } from "@/utils/getData";
 import CatalogItemSkeleton from "./Sceleton";
 import { useSearchParams } from "next/navigation";
 
+export const revalidate = 20;
 const CatalogGrid = () => {
   const searchParams = useSearchParams();
   const fiterCategory = searchParams.get("category");
   const sortOrder = searchParams.get("order");
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const url = process.env.URL;
-  console.log(url);
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
       try {
         const response = await getAllProducts(fiterCategory, sortOrder);
         setProducts(response);
+        console.log("fetch");
       } catch (error) {
         console.error(error);
         setProducts([]);
