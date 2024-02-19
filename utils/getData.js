@@ -7,7 +7,7 @@ import pickBy from "lodash.pickby";
 
 export const getAllProducts = async (category, order) => {
   const { data } = await axios.get(
-    `https://fazel-client.vercel.app/apicatalog`,
+    `https://fazel-client.vercel.app/api/catalog`,
     {
       params: pickBy({
         category,
