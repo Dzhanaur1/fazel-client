@@ -6,13 +6,18 @@ import { Noto_Sans } from "next/font/google";
 import { store } from "@/redux/store";
 import { ReduxProvider } from "@/redux/provider";
 import { Analytics } from "@vercel/analytics/react";
+import { Suspense } from "react";
+import { Metrika } from "./components/YandexMetrika";
 const inter = Noto_Sans({ subsets: ["cyrillic"], weight: "400" });
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className=" h-full">
       <head>
-        <meta name="google-site-verification" content="qwDLp0ssqVm-yU3rg5Ljt2O-pNK1C-4qJcPW0ENBYRw" />
+        <meta
+          name="google-site-verification"
+          content="qwDLp0ssqVm-yU3rg5Ljt2O-pNK1C-4qJcPW0ENBYRw"
+        />
         <link
           rel="icon"
           href="https://fazel-client.vercel.app/icons/Fazel.svg"
@@ -33,6 +38,9 @@ export default function RootLayout({ children }) {
             <Footer />
           </div>
         </ReduxProvider>
+        <Suspense>
+          <Metrika />
+        </Suspense>
       </body>
     </html>
   );
