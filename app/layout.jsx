@@ -1,18 +1,14 @@
-import { Provider } from "react-redux";
+import { ReduxProvider } from "../redux/provider";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import "./globals.css";
 import { Noto_Sans } from "next/font/google";
-import { store } from "@/redux/store";
-import { ReduxProvider } from "@/redux/provider";
-import { Analytics } from "@vercel/analytics/react";
-import { Suspense } from "react";
-import { Metrika } from "./components/YandexMetrika";
+
 const inter = Noto_Sans({ subsets: ["cyrillic"], weight: "400" });
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className=" h-full">
+    <html lang="ru" className=" h-full">
       <head>
         <meta
           name="google-site-verification"
@@ -32,15 +28,10 @@ export default function RootLayout({ children }) {
         <ReduxProvider>
           <div className="flex flex-col h-full">
             <Header />
-            <main className="pt-[48px]  flex-[1_0_auto]">
-              {children} <Analytics />{" "}
-            </main>
+            <main className="pt-[48px]  flex-[1_0_auto]">{children}</main>
             <Footer />
           </div>
         </ReduxProvider>
-        <Suspense>
-          <Metrika />
-        </Suspense>
       </body>
     </html>
   );

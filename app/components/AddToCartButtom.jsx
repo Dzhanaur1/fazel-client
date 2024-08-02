@@ -14,17 +14,17 @@ const Button = (product) => {
   return (
     <React.Fragment>
       {findItem ? (
-        <div className="flex gap-3  my-4 items-center">
+        <div className="flex gap-3  items-center">
           <button
             onClick={() => dispatch(reduceItem(product))}
-            className="btn btn--fill-black w-8 h-8 inline-flex justify-center items-center"
+            className="items-center text-sm active:bg-gray-100 active:text-black/60 active:transition-none border font-medium gap-2 inline-flex justify-center outline-offset-2 px-6 py-2 transition w-full lg:w-auto rounded-lg bg-black border-white/20 hover:bg-gray-600 text-white"
           >
             -
           </button>
           <p>{findItem.count}</p>
           <button
             onClick={addToCart}
-            className="btn btn--fill-black w-8 h-8  inline-flex  justify-center items-center"
+            className="items-center text-sm active:bg-gray-100 active:text-black/60 active:transition-none border font-medium gap-2 inline-flex justify-center outline-offset-2 px-6 py-2 transition w-full lg:w-auto rounded-lg bg-black border-white/20 hover:bg-gray-600 text-white"
           >
             +
           </button>
@@ -32,7 +32,7 @@ const Button = (product) => {
       ) : (
         <button
           onClick={addToCart}
-          className="btn btn--fill-black max-w-[220px] my-4"
+          className="items-center text-sm active:bg-gray-100 active:text-black/60 active:transition-none border font-medium gap-2 inline-flex justify-center outline-offset-2 px-6 py-3 transition w-full lg:w-auto rounded-lg bg-black border-white/20 hover:bg-gray-600 text-white"
         >
           Добавить в корзину
         </button>

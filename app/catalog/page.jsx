@@ -22,6 +22,7 @@ export const metadata = {
   },
 };
 const CatalogPage = () => {
+  
   return (
     <React.Fragment>
       <div className="con relative flex flex-col pt-5 lg:pt-9">
