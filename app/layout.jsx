@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
         />
         <link
           rel="icon"
-          href="https://fazel-client.vercel.app/icons/Fazel.svg"
+          href="https://fazel-client.vercel.app/Logo-black.svg"
           type="image/svg+xml"
         />
         <meta name="yandex-verification" content="04f7e6e6d5b9a2bb" />

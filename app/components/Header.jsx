@@ -533,7 +533,7 @@ export default function Header() {
                     </>
                   )}
                 </Disclosure>
-                <Disclosure as="div" className="-mx-3">
+                {/* <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-neutral-950 hover:bg-gray-50">
@@ -560,7 +560,7 @@ export default function Header() {
                       </Disclosure.Panel>
                     </>
                   )}
-                </Disclosure>
+                </Disclosure> */}
                 <Link
                   onClick={() => setMobileMenuOpen(false)}
                   href="/project"

@@ -22,11 +22,10 @@ export const metadata = {
   },
 };
 const CatalogPage = () => {
-  
   return (
     <React.Fragment>
-      <div className="con relative flex flex-col pt-5 lg:pt-9">
-        <div className="w-full flex justify-between">
+      <div className="con relative flex flex-col pt-5 lg:pt-[100px]">
+        <div className="w-full flex  justify-between">
           <h1 className="text-lg font-bold lg:text-2xl ">Каталог</h1>
         </div>
         <CatalogSort />
