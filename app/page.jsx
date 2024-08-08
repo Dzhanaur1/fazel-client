@@ -36,8 +36,8 @@ const Home = () => {
       <Title text={"Популярные товары"} />
 
       <Slider />
-      <Title text={"Наши работы"} />
-      <GallerySlider />
+      {/* <Title text={"Наши работы"} />
+      <GallerySlider /> */}
     </React.Fragment>
   );
 };
