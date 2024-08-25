@@ -19,8 +19,8 @@ const AboutPage = () => {
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md">
             <FaEnvelope className="text-3xl mb-4" />
-            <h2 className="text-xl font-bold mb-2">Email</h2>
-            <p>info@ourcompany.com</p>
+            <h2 className="text-xl font-bold mb-2">Почта</h2>
+            <p>info@udo.shop</p>
           </div>
         </div>
         <div className="mt-12">
