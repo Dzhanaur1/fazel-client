@@ -74,7 +74,7 @@ const Contact = () => {
                 </div>
                 <div className="w-full">
                   <h4 className="mb-1 text-xl font-bold text-dark">Почта</h4>
-                  <p className="text-base text-body-color">info@udo.shop</p>
+                  <p className="text-base text-body-color">info@udddo.shop</p>
                 </div>
               </div>
             </div>
