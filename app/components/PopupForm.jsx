@@ -3,9 +3,12 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import ReactInputMask from "react-input-mask";
+import { useDispatch } from "react-redux";
+import { clearCart } from "@/redux/cart/slice";
 const PopupForm = ({ cartItems }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [sendSuccess, setSuccess] = useState(null);
+  // const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -24,17 +27,20 @@ const PopupForm = ({ cartItems }) => {
         name: item.name,
         quantity: item.count,
         price: item.price,
+        image: item.image,
       })),
     };
 
     try {
       const response = await axios.post(
         "https://fazel-server.vercel.app/api/send-order-email",
+
         data
       );
 
       if (response.status === 200) {
         setSuccess(true);
+        // dispatch(clearCart());
         reset();
       } else {
         setSuccess(false);
